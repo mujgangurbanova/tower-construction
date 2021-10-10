@@ -9,16 +9,18 @@ import SketchFigure from "./SketchFigure";
 function Sketch() {
   return (
     <BuildingInformation>
-      <BuildingInformationContainer>
-        <h1 className="building-title">Mənzil haqqında məlumatlar</h1>
-        <SketchContainer>
-          <SketchFigure />
-          <BuildingInformations />
-          <Banks />
-        </SketchContainer>
-      </BuildingInformationContainer>
-      <AddCustomer/>
-      <ProjectDetails/>
+      <Wrapper>
+        <BuildingInformationContainer>
+          <h1 className="building-title">Mənzil haqqında məlumatlar</h1>
+          <SketchContainer>
+            <SketchFigure />
+            <BuildingInformations />
+            <Banks />
+          </SketchContainer>
+        </BuildingInformationContainer>
+        <AddCustomer />
+        <ProjectDetails />
+      </Wrapper>
     </BuildingInformation>
   );
 }
@@ -30,7 +32,6 @@ export const BuildingInformation = styled.section`
   width: 70%;
   margin-top: 40px;
   margin-left: 20px;
-
 `;
 
 const SketchContainer = styled.div`
@@ -43,12 +44,13 @@ const BuildingInformationContainer = styled.div`
   padding: 1.25rem 1.875rem;
   background-color: var(--background);
 
-
   .building-title {
     color: var(--main-color);
-    
+
     font-size: 1.25rem;
     width: fit-content;
     margin-left: 6px;
   }
 `;
+
+export const Wrapper = styled.div``;

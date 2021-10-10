@@ -5,10 +5,10 @@ function Checkbox() {
   return (
     <div className="checkbox">
       <Checked>
-        <label class="check-label">
+        <label className="check-label">
           İlkin ödəniş olunub
           <input type="checkbox"  />
-          <span class="checkmark"></span>
+          <span className="checkmark"></span>
         </label>
       </Checked>
       <button className="add-customers">Alıcını əlavə et</button>

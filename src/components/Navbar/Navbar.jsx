@@ -5,6 +5,8 @@ import customers from "images/customers.svg";
 import notifications from "images/notifications.png";
 import statistics from "images/statistics.png";
 import exit from "images/log-out.png";
+import {Link} from "react-router-dom";
+
 
 function Navbar() {
   return (
@@ -13,11 +15,11 @@ function Navbar() {
       <NavLinks>
         <NavLists>
           <img src={projects} alt="projects" />
-          <a href="#!">Layihələr</a>
+          <Link to="/">Layihələr</Link>
         </NavLists>
         <NavLists>
           <img src={customers} alt="customers" />
-          <a href="#!">Müştərilər</a>
+          <Link to="/customers">Müştərilər</Link>
         </NavLists>
         <NavLists>
           <img src={notifications} alt="notifications" />
@@ -42,7 +44,7 @@ const Navigation = styled.div`
 flex: 1;
 height: 100%;
 position: sticky;
- top: 8.5rem;
+ top: 13.5rem;
   background: var(--white);
 
   

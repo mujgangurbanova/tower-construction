@@ -179,6 +179,13 @@ html {
   padding: 2px;
 
 }
-`;
 
+
+.loader-wrapper {
+  align-items: center;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+}
+`;
 export default GlobalStyle;

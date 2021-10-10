@@ -4,7 +4,7 @@ import AddNewProject from "./AddNewProject";
 import Card from "./Card";
 import Filter from "./Filter";
 
-function ProjectDetails({color}) {
+function ProjectDetails() {
   return (
     <ProjectDetWrapper>
       <ProjectDetContainer>

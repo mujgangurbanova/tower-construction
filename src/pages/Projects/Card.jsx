@@ -1,17 +1,17 @@
 import { Cards } from "components/Data";
-import React from "react";
 import styled from "styled-components";
+import React from "react";
 
 function Card() {
   return (
     <CardWrapper>
-      {Cards.map(({ id, room, area, color, secondColor, sup, link, title }) => (
-        <CardContainer color={color} secondColor={secondColor} key={id}>
-          <CardDetails secondColor={secondColor} color={color}>
+      {Cards.map(({ id, room, area, color, secondcolor, sup, link, title }) => (
+        <CardContainer color={color} secondcolor={secondcolor} key={id}>
+          <CardDetails secondcolor={secondcolor} color={color}>
             <div color={color} className="card-title">
               {id}
             </div>
-            <span secondColor={secondColor} className="home-current-status">
+            <span secondcolor={secondcolor} className="home-current-status">
               {title}
             </span>
             <div className="room-size">
@@ -62,7 +62,7 @@ export const CardDetails = styled.div`
       font-weight: bold;
     display: block;
     margin: 10px;
-    color: ${(props) => props.secondColor};
+    color: ${(props) => props.secondcolor};
   }
 
   .room-size {

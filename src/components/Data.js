@@ -47,7 +47,7 @@ export const Cards = [
     room: '4 otaqlı',
     link:' Ətraflı',
     color:'#9C89CE',
-    secondColor:'#5E44A2',
+    secondcolor:'#5E44A2',
 
   },
   {
@@ -58,7 +58,7 @@ export const Cards = [
     room: '3 otaqlı',
     link:' Ətraflı',
     color:'#FDA242',
-    secondColor:'#FDA242',
+    secondcolor:'#FDA242',
 
 
 
@@ -71,7 +71,7 @@ export const Cards = [
     room: '4 otaqlı',
     link:' Ətraflı',
     color:'#FDA242',
-    secondColor:'#FDA242',
+    secondcolor:'#FDA242',
 
 
   },
@@ -83,7 +83,7 @@ export const Cards = [
     room: '3 otaqlı',
     link:' Ətraflı',
     color:'#3B7EA4',
-    secondColor:'#3B7EA4',
+    secondcolor:'#3B7EA4',
 
   },
   {
@@ -94,7 +94,7 @@ export const Cards = [
     room: '3 otaqlı',
     link:' Ətraflı',
     color:'#3B7EA4',
-    secondColor:'#3B7EA4',
+    secondcolor:'#3B7EA4',
 
 
   },
@@ -106,7 +106,7 @@ export const Cards = [
     room: '3 otaqlı',
     link:' Ətraflı',
     color:'#9C89CE',
-    secondColor:'#5E44A2',
+    secondcolor:'#5E44A2',
 
   },
   {
@@ -117,7 +117,7 @@ export const Cards = [
     room: '4 otaqlı',
     link:' Ətraflı',
     color:'#FDA242',
-    secondColor:'#FDA242',
+    secondcolor:'#FDA242',
 
 
   },
@@ -129,7 +129,7 @@ export const Cards = [
     room: '4 otaqlı',
     link:' Ətraflı',
     color:'#FDA242',
-    secondColor:'#FDA242',
+    secondcolor:'#FDA242',
 
 
   },
@@ -141,7 +141,7 @@ export const Cards = [
     room: '3 otaqlı',
     link:' Ətraflı',
     color:'#3B7EA4',
-    secondColor:'#3B7EA4',
+    secondcolor:'#3B7EA4',
 
 
   },
@@ -153,7 +153,7 @@ export const Cards = [
     room: '4 otaqlı',
     link:' Ətraflı',
     color:'#FDA242',
-    secondColor:'#FDA242',
+    secondcolor:'#FDA242',
 
 
   },
@@ -165,7 +165,7 @@ export const Cards = [
     room: '3 otaqlı',
     link:' Ətraflı',
     color:'#9C89CE',
-    secondColor:'#5E44A2',
+    secondcolor:'#5E44A2',
 
   },
   {
@@ -176,7 +176,7 @@ export const Cards = [
     room: '3 otaqlı',
     link:' Ətraflı',
     color:'#9C89CE',
-    secondColor:'#5E44A2',
+    secondcolor:'#5E44A2',
 
   },
   {
@@ -187,7 +187,7 @@ export const Cards = [
     room: '3 otaqlı',
     link:' Ətraflı',
     color:'#9C89CE',
-    secondColor:'#5E44A2',
+    secondcolor:'#5E44A2',
 
   },
   {
@@ -198,7 +198,7 @@ export const Cards = [
     room: '4 otaqlı',
     link:' Ətraflı',
     color:'#FDA242',
-    secondColor:'#FDA242',
+    secondcolor:'#FDA242',
 
 
   },
@@ -210,7 +210,7 @@ export const Cards = [
     room: '4 otaqlı',
     link:' Ətraflı',
     color:'#FDA242',
-    secondColor:'#FDA242',
+    secondcolor:'#FDA242',
 
 
   },
@@ -222,7 +222,7 @@ export const Cards = [
     room: '3 otaqlı',
     link:' Ətraflı',
     color:'#3B7EA4',
-    secondColor:'#3B7EA4',
+    secondcolor:'#3B7EA4',
 
 
   },
@@ -234,7 +234,7 @@ export const Cards = [
     room: '3 otaqlı',
     link:' Ətraflı',
     color:'#3B7EA4',
-    secondColor:'#3B7EA4',
+    secondcolor:'#3B7EA4',
 
 
   },
@@ -246,7 +246,7 @@ export const Cards = [
     room: '3 otaqlı',
     link:' Ətraflı',
     color:'#3B7EA4',
-    secondColor:'#3B7EA4',
+    secondcolor:'#3B7EA4',
 
 
   },
@@ -258,7 +258,7 @@ export const Cards = [
     room: '3 otaqlı',
     link:' Ətraflı',
     color:'#9C89CE',
-    secondColor:'#5E44A2',
+    secondcolor:'#5E44A2',
 
   },
   {
@@ -269,7 +269,7 @@ export const Cards = [
     room: '4 otaqlı',
     link:' Ətraflı',
     color:'#FDA242',
-    secondColor:'#FDA242',
+    secondcolor:'#FDA242',
 
 
   },
@@ -281,7 +281,7 @@ export const Cards = [
     room: '4 otaqlı',
     link:' Ətraflı',
     color:'#FDA242',
-    secondColor:'#FDA242',
+    secondcolor:'#FDA242',
 
 
   },
@@ -293,7 +293,7 @@ export const Cards = [
     room: '4 otaqlı',
     link:' Ətraflı',
     color:'#FDA242',
-    secondColor:'#FDA242',
+    secondcolor:'#FDA242',
 
 
   },
@@ -305,7 +305,7 @@ export const Cards = [
     room: '3 otaqlı',
     link:' Ətraflı',
     color:'#9C89CE',
-    secondColor:'#5E44A2',
+    secondcolor:'#5E44A2',
 
   },
   {
@@ -316,7 +316,7 @@ export const Cards = [
     room: '3 otaqlı',
     link:' Ətraflı',
     color:'#9C89CE',
-    secondColor:'#5E44A2',
+    secondcolor:'#5E44A2',
 
   },
   {
@@ -327,7 +327,7 @@ export const Cards = [
     room: '3 otaqlı',
     link:' Ətraflı',
     color:'#9C89CE',
-    secondColor:'#5E44A2',
+    secondcolor:'#5E44A2',
 
   },
   {
@@ -338,7 +338,7 @@ export const Cards = [
     room: '3 otaqlı',
     link:' Ətraflı',
     color:'#9C89CE',
-    secondColor:'#5E44A2',
+    secondcolor:'#5E44A2',
 
   },
   {
@@ -349,7 +349,7 @@ export const Cards = [
     room: '3 otaqlı',
     link:' Ətraflı',
     color:'#9C89CE',
-    secondColor:'#5E44A2',
+    secondcolor:'#5E44A2',
 
   },
   {
@@ -360,7 +360,7 @@ export const Cards = [
     room: '3 otaqlı',
     link:' Ətraflı',
     color:'#3B7EA4',
-    secondColor:'#3B7EA4',
+    secondcolor:'#3B7EA4',
 
 
   },
@@ -372,7 +372,7 @@ export const Cards = [
     room: '3 otaqlı',
     link:' Ətraflı',
     color:'#3B7EA4',
-    secondColor:'#3B7EA4',
+    secondcolor:'#3B7EA4',
 
 
   },
@@ -384,7 +384,7 @@ export const Cards = [
     room: '3 otaqlı',
     link:' Ətraflı',
     color:'#9C89CE',
-    secondColor:'#5E44A2',
+    secondcolor:'#5E44A2',
 
   },
   {
@@ -395,7 +395,7 @@ export const Cards = [
     room: '3 otaqlı',
     link:' Ətraflı',
     color:'#9C89CE',
-    secondColor:'#5E44A2',
+    secondcolor:'#5E44A2',
 
   },
   {
@@ -406,7 +406,7 @@ export const Cards = [
     room: '3 otaqlı',
     link:' Ətraflı',
     color:'#9C89CE',
-    secondColor:'#5E44A2',
+    secondcolor:'#5E44A2',
 
   },
   {
@@ -417,7 +417,7 @@ export const Cards = [
     room: '3 otaqlı',
     link:' Ətraflı',
     color:'#3B7EA4',
-    secondColor:'#3B7EA4',
+    secondcolor:'#3B7EA4',
 
 
   },
@@ -429,7 +429,7 @@ export const Cards = [
     room: '3 otaqlı',
     link:' Ətraflı',
     color:'#3B7EA4',
-    secondColor:'#3B7EA4',
+    secondcolor:'#3B7EA4',
 
 
   },
@@ -441,7 +441,7 @@ export const Cards = [
     room: '3 otaqlı',
     link:' Ətraflı',
     color:'#9C89CE',
-    secondColor:'#5E44A2',
+    secondcolor:'#5E44A2',
 
   },
 ]
