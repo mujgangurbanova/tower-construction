@@ -27,7 +27,7 @@ function Navbar() {
         </NavLists>
         <NavLists>
           <img src={statistics} alt="statistics" />
-          <a href="#!">Statistika</a>
+          <Link to="/statistics">Statistika</Link>
         </NavLists>
         <NavLists>
           <img src={exit} alt="exit" />

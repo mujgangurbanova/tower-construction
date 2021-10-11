@@ -21,8 +21,7 @@ function AddNewProject() {
               </div>
               {/* <div class="dropdown__container">
               <ul>
-                <li>ru</li>
-                <li>az</li>
+                <li>Yaşat Kompleksi</li>
               </ul>
             </div> */}
             </div>

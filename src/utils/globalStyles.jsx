@@ -31,12 +31,14 @@ input::-webkit-inner-spin-button {
     --blue:#3B7EA4;
     --light-main:#9C89CE;
     --green:#B9DDA8;
+    --dark-green:#4C8942;
     --late-color:#D0C9E2;
+    --late-title: #8068BF;
     --red:#DF6161;
     --white:#fff;
     --border-color:#C4C4C4;
     --hover:rgba(231, 226, 242, 0.63);
-    --background:#e5e5e5;
+    --background:#F2F3F3;
     --line:#eeeeee;
     --label:#A1A2A3;
     --border:#7b7b7b;
@@ -186,6 +188,10 @@ html {
   display: flex;
   height: 100vh;
   justify-content: center;
+}
+
+.active {
+    transform: translateY(0);
 }
 `;
 export default GlobalStyle;
