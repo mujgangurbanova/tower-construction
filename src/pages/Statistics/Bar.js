@@ -1,6 +1,18 @@
 import React, { Component } from "react";
 import Chart from "react-apexcharts";
 import "styles/App.scss";
+
+function Title() {
+  return (
+    <div className="title">
+      <h1>Keçən həftə</h1>
+      <a href="#!">Kredit</a>
+      <a href="#!">İpoteka</a>
+      <a href="#!">Satılıb</a>
+    </div>
+  );
+}
+
 class Bar extends Component {
   constructor(props) {
     super(props);
@@ -8,7 +20,7 @@ class Bar extends Component {
     this.state = {
       series: [
         {
-          data: [2100, 1500, 900, 700, 800, 500, 100],
+          data: [600, 550, 450, 350, 250, 200, 150],
         },
       ],
       options: {
@@ -27,8 +39,8 @@ class Bar extends Component {
         },
         dataLabels: {
           enabled: true,
-          style: {},
         },
+
         xaxis: {
           categories: ["B.e", "Ç.a", "Ç.", "C.a", "C.", "Ş.", "B."],
         },
@@ -38,14 +50,17 @@ class Bar extends Component {
 
   render() {
     return (
-      <div id="chart">
-        <Chart
-          options={this.state.options}
-          series={this.state.series}
-          type="bar"
-          width={600}
-          height={250}
-        />
+      <div className="chart-wrapper">
+        <div id="chart">
+          <Title />
+          <Chart
+            options={this.state.options}
+            series={this.state.series}
+            type="bar"
+            width={240}
+            height={210}
+          />
+        </div>
       </div>
     );
   }

@@ -1,7 +1,8 @@
 import React, { Suspense, lazy } from "react";
 import { ClipLoader } from "react-spinners";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import NewCustomer from "pages/Customers/NewCustomer";
+const NewCustomer = lazy(() => import("pages/Customers/NewCustomer"));
+const Statistics = lazy(() => import("pages/Statistics/Statistics"));
 const GlobalStyle = lazy(() => import("utils/globalStyles"));
 const Navbar = lazy(() => import("components/Navbar/Navbar"));
 const Heading = lazy(() => import("components/Header/Main"));
@@ -22,12 +23,15 @@ function App() {
           <Heading />
           <div className="container">
             <Navbar />
-            <Route exact path="/">
-              <Sketch />
-            </Route>
-            <Route  path="/customers">
-              <NewCustomer/>
-            </Route>
+              <Route exact path="/">
+                <Sketch />
+              </Route>
+              <Route path="/customers">
+                <NewCustomer />
+              </Route>
+              <Route path="/statistics">
+                <Statistics />
+              </Route>
           </div>
         </Suspense>
       </Router>

@@ -6,6 +6,11 @@ import turan from "images/turan.png";
 import gunayBank from "images/gunaybank.png";
 import uniBank from "images/unibank.png";
 import chevron from "images/chevron.png";
+import buildingOne from "images/building-one.png";
+import buildingTwo from "images/building-two.png";
+import buildingThree from "images/building-three.png";
+import buildingFour from "images/building-four.png";
+import buildingFive from "images/building-five.png";
 
 export const BankInformation = [
   {
@@ -393,7 +398,6 @@ export const Cards = [
 
 export const CustomerData = [
   {
-    id: "1",
     customer: "Niyaz Əliyev",
     building: "20",
     cost: "40.000 AZN",
@@ -412,7 +416,6 @@ export const CustomerData = [
     button: "Bildiriş göndər",
   },
   {
-    id: "2",
     customer: "Əli Ağayev",
     building: "19",
     cost: "70.000 AZN",
@@ -431,7 +434,6 @@ export const CustomerData = [
     button: "Bildiriş göndər",
   },
   {
-    id: "3",
     customer: "Murad Nağıyev",
     building: "18",
     cost: "60.000 AZN",
@@ -450,7 +452,6 @@ export const CustomerData = [
     button: "Bildiriş göndər",
   },
   {
-    id: "4",
     customer: "Niyaz Əliyev",
     building: "17",
     cost: "50.000 AZN",
@@ -469,7 +470,6 @@ export const CustomerData = [
     button: "Bildiriş göndər",
   },
   {
-    id: "5",
     customer: "Niyaz Əliyev",
     building: "15",
     cost: "60.000 AZN",
@@ -488,7 +488,6 @@ export const CustomerData = [
     button: "Bildiriş göndər",
   },
   {
-    id: "6",
     customer: "Niyaz Əliyev",
     building: "20",
     cost: "40.000 AZN",
@@ -507,7 +506,6 @@ export const CustomerData = [
     button: "Bildiriş göndər",
   },
   {
-    id: "7",
     customer: "Niyaz Əliyev",
     building: "14",
     cost: "40.000 AZN",
@@ -524,5 +522,33 @@ export const CustomerData = [
     duration: "Ödənilib",
     chevron: chevron,
     button: "Bildiriş göndər",
+  },
+];
+
+export const Residences = [
+  {
+    img: buildingOne,
+    title: "Creative Residence",
+    cost: "250.000 AZN",
+  },
+  {
+    img: buildingTwo,
+    title: "Miracle Apartments",
+    cost: "150.000 AZN",
+  },
+  {
+    img: buildingThree,
+    title: "New Life Buildings",
+    cost: "369.000 AZN",
+  },
+  {
+    img: buildingFour,
+    title: "Lotus Residence",
+    cost: "455.000 AZN",
+  },
+  {
+    img: buildingFive,
+    title: "Life Apartments",
+    cost: "175.000 AZN",
   },
 ];
