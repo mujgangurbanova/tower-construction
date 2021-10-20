@@ -1,18 +1,31 @@
-import React from "react";
+import React, {useState} from "react";
 import { Input } from "./Buyer";
 import { Label } from "./Buyer";
 import { BuyerContainer } from "./Buyer";
 import { BuyerWrapper } from "./Buyer";
 import info from "images/info.svg";
 import styled from "styled-components";
+import { InfoButton } from "./Buyer";
+import { PersonalCard } from "./Buyer";
+import sexsiyyet from "images/sexsiyyet.png";
+
 
 
 function Voucher() {
+  const [show, setShow] = useState(false);
+  function showIcon(e) {
+    e.preventDefault();
+    if (show) {
+      setShow(false);
+    } else {
+      setShow(true);
+    }
+  }
   return (
     <BuyerWrapper>
       <VoucherContainer>
         <Label htmlFor="buyer">Zamin</Label>
-        <Input id="buyer" type="text" required />
+        <Input id="buyer" type="text"  />
       </VoucherContainer>
       <VoucherContainer>
         <Label htmlFor="phone">Telefon nömrəsi</Label> <br />
@@ -24,20 +37,22 @@ function Voucher() {
             <option>70</option>
             <option>77</option>
           </select>
-          <Input id="phone" type="number" required />
+          <Input id="phone" type="number"  />
         </div>
       </VoucherContainer>
       <VoucherContainer>
         <Label htmlFor="code">ŞV-nin nömrəsi</Label>
-        <Input id="code" type="text" required/>
+        <Input id="code" type="text" />
       </VoucherContainer>
       <VoucherContainer>
         <Label className="icon" htmlFor="card">Fin Kod
-        <button>
+        <InfoBtn onClick ={showIcon}>
           <img className="info" src={info} alt="info" />
-        </button>
+        </InfoBtn>
+        <PersonalCardImage show ={show} src={sexsiyyet}/>
+        
 </Label>
-        <Input id="card" type="text" required/>
+        <Input id="card" type="text" />
       </VoucherContainer>
       
 
@@ -49,8 +64,11 @@ export default Voucher;
 
 const VoucherContainer = styled(BuyerContainer)`
 
-button{
-    bottom: 2px;
-}
 
 `
+
+const InfoBtn = styled(InfoButton)`
+bottom: 2px;
+`
+
+const PersonalCardImage = styled(PersonalCard)``;

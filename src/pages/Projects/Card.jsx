@@ -21,7 +21,7 @@ function Card() {
               </span>
               <div className="home-detail">
                 <span className="room-number">{room}</span>
-                <a className="detailed" href="#!">
+                <a className="detailed" href="#projects">
                   {link}
                 </a>
               </div>
@@ -40,6 +40,10 @@ export const CardContainer = styled.div`
   height: 170px;
   width: 175px;
   border-radius: 10px;
+
+  @media only screen and (max-width: 64rem) {
+    /* width: auto; */
+  }
 `;
 
 const CardWrapper = styled.div`
@@ -47,6 +51,10 @@ const CardWrapper = styled.div`
   grid-template-columns: repeat(5, 1fr);
   gap: 15px;
   margin-top: 30px;
+
+  @media only screen and (max-width: 64rem) {
+    /* grid-template-columns: repeat(3, 1fr); */
+  }
 `;
 
 export const CardDetails = styled.div`
@@ -59,7 +67,7 @@ export const CardDetails = styled.div`
   }
 
   .home-current-status {
-      font-weight: bold;
+    font-weight: bold;
     display: block;
     margin: 10px;
     color: ${(props) => props.secondcolor};

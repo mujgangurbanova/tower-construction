@@ -9,19 +9,19 @@ function Credit() {
     <BuyerWrapper>
       <BuyerContainer>
         <Label htmlFor="buyer">Kreditin müddəti</Label>
-        <Input id="buyer" type="text" required />
+        <Input id="buyer" type="text"  />
       </BuyerContainer>
       <BuyerContainer>
         <Label htmlFor="buyer">İlkin ödəniş</Label>
-        <Input id="buyer" type="text" required />
+        <Input id="buyer" type="text"  />
       </BuyerContainer>
       <BuyerContainer>
         <Label htmlFor="buyer">Aylıq ödəniş</Label>
-        <Input id="buyer" type="text" required />
+        <Input id="buyer" type="text"  />
       </BuyerContainer>
       <BuyerContainer>
         <Label htmlFor="buyer">Ödəniş tarixi</Label>
-        <Input id="buyer" type="date" required />
+        <Input id="buyer" type="date"  />
       </BuyerContainer>
     </BuyerWrapper>
   );

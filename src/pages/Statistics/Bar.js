@@ -43,6 +43,35 @@ class Bar extends Component {
 
         xaxis: {
           categories: ["B.e", "Ç.a", "Ç.", "C.a", "C.", "Ş.", "B."],
+          lines: {
+            show: false,
+          },
+          tooltip: {
+            enabled: false,
+          },
+
+          axisTicks: {
+            show: false,
+          },
+          axisBorder: {
+            show: false,
+          },
+          labels:{
+            show:false,
+          },
+        },
+
+        grid: {
+          xaxis: {
+            lines: {
+              show: false,
+            },
+          },
+          yaxis: {
+            lines: {
+              show: false,
+            },
+          },
         },
       },
     };
@@ -58,7 +87,7 @@ class Bar extends Component {
             series={this.state.series}
             type="bar"
             width={240}
-            height={210}
+            height={190}
           />
         </div>
       </div>

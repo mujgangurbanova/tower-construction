@@ -18,10 +18,12 @@ function Checkbox() {
 
 export default Checkbox;
 const Checked = styled.div`
-  flex: 5;
+  flex: 8;
 
   label {
     color: var(--secondary-color);
     margin-top: 15px;
   }
+
+  
 `;

@@ -33,9 +33,7 @@
   opacity: .1;
 }
 
-line{
-  display: none;
-}
+
 
 .chart-wrapper{
     background-color: var(--white);
@@ -50,9 +48,6 @@ line{
     width: 100%;
 }
 
-.apexcharts-xaxis-texts-g {
-  display: none !important;
-}
 
 .title{
     columns: 2;
@@ -76,4 +71,8 @@ line{
 
 
 
+}
+
+.area-chart{
+  border-top: 0.6951px solid var(--chart-border);
 }

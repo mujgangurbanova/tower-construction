@@ -25,6 +25,11 @@ export default Banks
 
 const Mortgage = styled.div`
 
+@media only screen and (max-width:64rem){
+    /* margin: 20px auto 0 auto; */
+  }
+
+
 `
 
 const MortgageContainer = styled.div`
@@ -41,10 +46,12 @@ padding: 15px;
 
     img{
         margin-right: 10px;
+        width: 27px;
     }
     span{
         text-align: left;
         color: var(--secondary-color);
+        width: 90px;
     }
 }
 

@@ -11,6 +11,12 @@ import buildingTwo from "images/building-two.png";
 import buildingThree from "images/building-three.png";
 import buildingFour from "images/building-four.png";
 import buildingFive from "images/building-five.png";
+import projects from "images/projects.svg";
+import customers from "images/customers.svg";
+import notifications from "images/notifications.png";
+import statistics from "images/statistics.png";
+import exit from "images/log-out.png";
+
 
 export const BankInformation = [
   {
@@ -398,6 +404,9 @@ export const Cards = [
 
 export const CustomerData = [
   {
+    
+
+    
     customer: "Niyaz Əliyev",
     building: "20",
     cost: "40.000 AZN",
@@ -552,3 +561,32 @@ export const Residences = [
     cost: "175.000 AZN",
   },
 ];
+
+
+export const SideBarData = [
+  {
+    icon:projects,
+    title:"Layihələr",
+    path:"/",
+  },
+  {
+    icon:customers,
+    title:"Müştərilər",
+    path:"/customers",
+  },
+  {
+    icon:notifications,
+    title:"Bildirişlər",
+    path:"#!",
+  },
+  {
+    icon:statistics,
+    title:"Statistika",
+    path:"/statistics",
+  },
+  {
+    icon:exit,
+    title:"Çıxış",
+    path:"#!",
+  },
+]

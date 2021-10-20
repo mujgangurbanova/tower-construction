@@ -43,6 +43,11 @@ input::-webkit-inner-spin-button {
     --label:#A1A2A3;
     --border:#7b7b7b;
     --line-color:#D2C7ED;
+    --chart-border:#EAEBEB;
+    --light-black:#6C7172;
+    --box-shadow:0px 0px 8px rgba(16, 30, 115, 0.12);
+    --text-area:#ABAEAF;
+    --outline:#48cae4;
 
 
 }
@@ -57,6 +62,9 @@ input::-webkit-inner-spin-button {
 body{
     overflow-x: hidden;
 }
+
+
+
 
 *,
 *::after,
@@ -81,10 +89,16 @@ html {
 }
 
 
-
 .container{
+  display: flex;
+  flex-direction: row;
+}
+.right-sidebar{
     display: flex;
     position: relative;
+    width: 100%;
+    flex-direction: column;
+  margin-left: 20px;
 }
 
 .checkbox{
@@ -101,6 +115,7 @@ html {
     border-radius: 10px;
     color: var(--white);
     cursor: pointer;
+    margin-right: 20px;
 }
 
 .check-label {
@@ -193,5 +208,91 @@ html {
 .active {
     transform: translateY(0);
 }
+
+
+.spinner {
+      position: absolute;
+      top: 60px;
+      display: none;
+
+      .arrow_box {
+        position: relative;
+        background: var(--white);
+        border: 4px solid var(--white);
+        height: 30px;
+        box-shadow: var(--box-shadow);
+        border-radius: 5px;
+        display:flex;
+        justify-content: center;
+        align-items:center;
+        flex-direction: row;
+        &:after,
+        &:before {
+          bottom: 100%;
+          left: 50%;
+          border: solid transparent;
+          content: "";
+          height: 0;
+          width: 0;
+          position: absolute;
+          pointer-events: none;
+        }
+        &:after {
+          border-color: rgba(255, 255, 255, 0);
+          border-bottom-color: var(--white);
+          border-width: 30px;
+          margin-left: -30px;
+        }
+        &:before {
+          border-color: rgba(255, 255, 255, 0);
+          border-bottom-color: var(--white);
+          border-width: 0;
+        }
+      }
+}
+   .spinnerToggle {
+      display: block;
+    }
+    
+    .spinner.message-spinner{
+      left: -41px;
+      
+    }
+    .spinner.notification-spinner{
+      left: 4px;
+
+    }
+
+   
+  .chartContainer {
+  margin: 0 auto;
+  margin-top: 10px;
+  max-width: 100%;
+  position: relative;
+  width: 220px;
+}
+.chartInner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: absolute;
+  top: 42%;
+  right: 20%;
+  bottom: 18%;
+  left: 42%;
+  border-radius: 50%;
+  line-height: 100%;
+  overflow: hidden;
+}
+
+.chartTarget,
+.chartDaysLabel {
+  font-size: 10px;
+}
+
+
+
+
 `;
+
 export default GlobalStyle;

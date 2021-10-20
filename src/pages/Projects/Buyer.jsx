@@ -1,13 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import info from "images/info.svg";
+import sexsiyyet from "images/sexsiyyet.png";
 
 function Buyer() {
+  const [show, setShow] = useState(false);
+  function showIcon(e) {
+    e.preventDefault();
+    if (show) {
+      setShow(false);
+    } else {
+      setShow(true);
+    }
+  }
   return (
     <BuyerWrapper>
       <BuyerContainer>
         <Label htmlFor="buyer">Alıcı</Label>
-        <Input id="buyer" type="text" required />
+        <Input id="buyer" type="text" />
       </BuyerContainer>
       <BuyerContainer>
         <Label htmlFor="phone">Telefon nömrəsi</Label> <br />
@@ -19,22 +29,23 @@ function Buyer() {
             <option>70</option>
             <option>77</option>
           </select>
-          <Input id="phone" type="number" required />
+          <Input id="phone" type="number" />
         </div>
       </BuyerContainer>
       <BuyerContainer>
         <Label htmlFor="code">ŞV-nin nömrəsi</Label>
-        <Input id="code" type="text" required />
+        <Input id="code" type="text" />
       </BuyerContainer>
       <BuyerContainer>
         <Label className="icon" htmlFor="card">
           Fin Kod
-          <button>
+          <InfoButton onClick={showIcon}>
             <img className="info" src={info} alt="info" />
-          </button>
+          </InfoButton>
+          <PersonalCard src={sexsiyyet} show={show} alt="" />
         </Label>
 
-        <Input id="card" type="text" required />
+        <Input id="card" type="text" />
       </BuyerContainer>
       <BuyerContainer>
         <div className="payment">
@@ -47,7 +58,7 @@ function Buyer() {
       </BuyerContainer>
       <BuyerContainer>
         <span>İş yerindən arayış</span>
-        <Input type="file" id="file" required></Input>
+        <Input type="file" id="file"></Input>
       </BuyerContainer>
     </BuyerWrapper>
   );
@@ -64,7 +75,20 @@ export const BuyerWrapper = styled.div`
   column-gap: 20px;
 `;
 
+export const InfoButton = styled.button`
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  background: transparent;
+  cursor: pointer;
+  right: -27px;
+  outline: none;
+  bottom: 2px;
+  border: none;
+`;
+
 export const BuyerContainer = styled.div`
+  position: relative;
   .phone-number {
     display: flex;
     select {
@@ -79,18 +103,16 @@ export const BuyerContainer = styled.div`
       height: 31px;
     }
   }
+`;
 
-  button {
-    position: absolute;
-    width: 18px;
-    height: 18px;
-    background: transparent;
-    cursor: pointer;
-    right: -27px;
-    outline: none;
-    bottom: 2px;
-    border: none;
-  }
+export const PersonalCard = styled.img`
+  position: absolute;
+  z-index: 1;
+  bottom: -108px;
+  left: 83px;
+  opacity: ${({ show }) =>show ? "1" : "0"};
+  visibility: ${({ show }) =>show ? "visible" : "hidden"};
+  transition: ${({ show }) =>show ? ".3s" : ".5s"};
 `;
 
 export const Label = styled.label`
@@ -106,5 +128,3 @@ export const Input = styled.input`
     outline: none !important;
   }
 `;
-
-

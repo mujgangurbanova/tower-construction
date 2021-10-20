@@ -1,75 +1,147 @@
-import React from "react";
+import React, {  useState } from "react";
 import styled from "styled-components";
 import Search from "images/search-icon.png";
 import message from "images/message.png";
 import notification from "images/notification.png";
 import Person from "images/leyla.png";
 import group from "images/group3.png";
-import Projects from "pages/Projects/Sketch";
-import AddCustomer from "pages/Projects/AddCustomer";
-import ImageLogo from "images/logo-puple.png";
+import BarLoader from "react-spinners/BarLoader";
+import { css } from "@emotion/react";
+import MenuItem from "@material-ui/core/MenuItem";
+import Menu from "@material-ui/core/Menu";
 
+const Main = ({hamburger, setHamburger}) => {
+  const loading = useState(true);
+  const [spinner, setSpinner] = useState(false);
+  const [spinnerNot, setSpinnerNot] = useState(false);
+  const [anchorEl, setAnchorEl] = useState(null);
+  const open = Boolean(anchorEl);
+  const handleMenu = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
 
-function Main() {
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
+  const handleSpinner = () => {
+    setSpinner(!spinner);
+    document
+      .querySelector(".message-spinner")
+      .classList.toggle("spinnerToggle");
+  };
+  const handleSpinnerNot = () => {
+    setSpinnerNot(!spinnerNot);
+    document
+      .querySelector(".notification-spinner")
+      .classList.toggle("spinnerToggle");
+  };
+  const override = css`
+    display: block;
+    margin: 0 auto;
+  `;
+
   return (
-      <Header>
-        <NavContainer>
-          <div className="brand-name">
-            <Logo src={ImageLogo} />
-            <BrandName>TOWER Construction</BrandName>
-          </div>
+    <Header>
 
-          <div className="input-bar">
-            <Input autoComplete="off" placeholder="Axtarış"></Input>
-            <img className="search" src={Search} alt="search-icon" />
+      <NavContainer>
+      <Hamburger hamburger ={hamburger} onClick={() => setHamburger(!hamburger)}>
+          <span />
+          <span />
+          <span />
+        </Hamburger>
+
+        <div className="input-bar">
+          <Input autoComplete="off" placeholder="Axtarış"></Input>
+          <img className="search" src={Search} alt="search-icon" />
+        </div>
+        <div className="person">
+          <div className="msg-group" onClick={handleSpinner}>
+            <img className="msg" src={message} alt="message" />
+            <img className="group" src={group} alt="group" />
           </div>
-          <div className="person">
-            <div className="msg-group">
-              <img className="msg" src={message} alt="message" />
-              <img className="group" src={group} alt="group" />
+          <div className="spinner message-spinner">
+            <div className="arrow_box">
+              <div className="sweet-loading">
+                <BarLoader loading={loading} css={override} size={150} />
+              </div>
             </div>
-            <img
-              className="notification"
-              src={notification}
-              alt="notification"
-            />
-            <span className="person-name">Leyla Rəhimli</span>
-            <img src={Person} alt="person" />
           </div>
-        </NavContainer>
-      </Header>
+          <img
+            className="notification"
+            src={notification}
+            alt="notification"
+            onClick={handleSpinnerNot}
+          />
+          <div className="spinner notification-spinner">
+            <div className="arrow_box">
+              <div className="sweet-loading">
+                <BarLoader loading={loading} css={override} size={150} />
+              </div>
+            </div>
+          </div>
+          <span className="person-name">Leyla Rəhimli</span>
+          <button
+            className="icon-button"
+            aria-label="account of current user"
+            aria-controls="menu-appbar"
+            aria-haspopup="true"
+            onClick={handleMenu}
+          >
+            <img src={Person} alt="person" />
+          </button>
+          <Menu
+            id="menu-appbar"
+            anchorEl={anchorEl}
+            anchorOrigin={{
+              vertical: "bottom",
+              horizontal: "right",
+            }}
+            keepMounted
+            transformOrigin={{
+              vertical: "bottom",
+              horizontal: "right",
+            }}
+            open={open}
+            onClose={handleClose}
+          >
+            <MenuItem onClick={handleClose}>Profile</MenuItem>
+            <MenuItem onClick={handleClose}>Logout</MenuItem>
+          </Menu>
+        </div>
+      </NavContainer>
+<Overlay hamburger={hamburger}/>
+    </Header>
   );
-}
+};
 
 export default Main;
-const BrandName = styled.h1`
-  margin-left: 1.25rem;
-  font-family: inherit;
-  font-size: 1.575rem;
-  width: 50%;
-  margin-top: 1.5625rem;
-  line-height: 1;
-  color: var(--main-color);
+const Hamburger = styled.div`
+    display: ${({ hamburger }) => (hamburger ? "none" : "flex")};
+  flex-direction: column;
+  cursor: pointer;
+  span {
+    width: 20px;
+    height: 2px;
+    background: rgb(119, 119, 119);
+    margin-bottom: 6px;
+  }
+  span:nth-child(3) {
+    width: 14px;
+    transition: width 0.15s ease-in-out 0s;
+  }
+ @media only screen and (min-width:80rem){
+   display: none;
+ }
 `;
 
-const Logo = styled.img`
-  height: 4.8125rem;
-`;
 export const Header = styled.div`
   background: var(--white);
-  width: 100%;
-  position: sticky ;
+  position: sticky;
   top: 0;
-  height: 8.5rem;
+  height: 7.5rem;
   z-index: 999;
-  .brand-name {
-    display: flex;
-    align-items: center;
-    /* margin-bottom: 1.25rem; */
-    
-  }
 `;
-
 
 const NavContainer = styled.div`
   display: flex;
@@ -89,29 +161,38 @@ const NavContainer = styled.div`
   .person {
     display: flex;
     align-items: center;
+    position: relative;
 
     .msg-group {
       display: flex;
       align-items: center;
       justify-content: center;
+      cursor: pointer;
     }
     .msg {
-      position: relative;
       margin-right: 20px;
     }
 
     .group {
       position: absolute;
-      top: 3.45rem;
+      top: 0.66rem;
     }
 
     .notification {
       margin-right: 20px;
+      cursor: pointer;
+      position: relative;
     }
 
     .person-name {
       margin-right: 1rem;
     }
+  }
+  .icon-button {
+    background: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
   }
 `;
 
@@ -124,6 +205,19 @@ const Input = styled.input`
   box-sizing: border-box;
   filter: drop-shadow(1px 2px 8px rgba(0, 0, 0, 0.25));
   border-radius: 0.3125rem;
+
+  
 `;
 
 
+export const Overlay = styled.label`
+@media only screen and (max-width:64rem){
+  position: ${({ hamburger }) => (hamburger ? "fixed" : "initial")};
+  inset: ${({ hamburger }) => (hamburger ? "0" : "")};
+  transition:  ${({ hamburger }) => (hamburger ? "opacity 0.3s ease 0s" : "")};
+  opacity:  ${({ hamburger }) => (hamburger ? "1" : "")};
+  pointer-events: auto;
+  background: rgba(0, 0, 0, 0.6);
+
+}
+`;
