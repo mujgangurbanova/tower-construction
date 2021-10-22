@@ -1,112 +1,108 @@
-import React, { Component } from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 import ReactChart from "react-apexcharts";
+import { useDispatch, useSelector } from "react-redux";
+import { areaChartData } from "redux/actionCreators";
 import "styles/App.scss";
 
-class Area extends Component {
-  constructor(props) {
-    super(props);
+const Area = () => {
 
-    this.state = {
-      series: [
-        {
-          data: [110, 80, 140, 50, 170, 20, 190, 50, 200, 60, 210, 110],
-        },
-      ],
+  const AreaChart = useSelector((state) => state.areaChartDataReducer.data);
+  const dispatch = useDispatch();
 
-      options: {
-        xaxis: {
-          type: "category",
-          categories: [
-            "Yanvar",
-            "Fevral",
-            "Mart",
-            "Aprel",
-            "May",
-            "Iyun",
-            "Iyul",
-            "Avqust",
-            "Sentyabr",
-            "Oktyabr",
-            "Noyabr",
-            "Dekabr",
-          ],
-          tooltip: {
-            enabled: false,
-          },
-
-          labels: {
-            show: true,
-            trim: false,
-          },
-          axisTicks: {
-            show: false,
-          },
-          axisBorder: {
-            show: false,
-          },
-        },
-        grid: {
-          show: true,
-          borderColor: " #F2F3F3",
-          strokeDashArray: 15,
-        },
-        chart: {
-          toolbar: {
-            show: false,
-          },
-          foreColor: "#ABAEAF",
-        },
-        dataLabels: {
-          enabled: false,
-        },
-        colors: ["#5E44A2"],
-        stroke: {
-          curve: "smooth",
-          width: 4,
-          show: true,
-          dashArray: 0,
-        },
-        fill: {
-          type: "gradient",
-          gradient: {
-            inverseColors: false,
-            opacityTo: [0, 0.1],
-            stops: [0, 100, 100],
-          },
-        },
-
-        responsive: [
-          {
-            breakpoint: 550,
-            options: {
-              legend: {
-                position: "bottom",
-                horizontalAlign: "center",
-                offsetY: 5,
-              },
-            },
-          },
-        ],
-
-       
+  useEffect(() => {
+    axios
+      .get("/chart.json")
+      .then((res) => dispatch(areaChartData(res.data)))
+      .catch((err) => console.log(err));
+  }, [dispatch]);
+  const [options] = useState({
+    series: [
+      {
+        data: AreaChart.a,
       },
-    };
-  }
+    ], 
+    
+    options :{
+     xaxis: {
+       type: "category",
+       categories: AreaChart.b,
+       tooltip: {
+         enabled: false,
+       },
+  
+       labels: {
+         show: true,
+         trim: false,
+       },
+       axisTicks: {
+         show: false,
+       },
+       axisBorder: {
+         show: false,
+       },
+     },
+     grid: {
+       show: true,
+       borderColor: " #F2F3F3",
+       strokeDashArray: 15,
+     },
+     chart: {
+       toolbar: {
+         show: false,
+       },
+       foreColor: "#ABAEAF",
+     },
+     dataLabels: {
+       enabled: false,
+     },
+     colors: ["#5E44A2"],
+     stroke: {
+       curve: "smooth",
+       width: 4,
+       show: true,
+       dashArray: 0,
+     },
+     fill: {
+       type: "gradient",
+       gradient: {
+         inverseColors: false,
+         opacityTo: [0, 0.1],
+         stops: [0, 100, 100],
+       },
+     },
+  
+     responsive: [
+       {
+         breakpoint: 550,
+         options: {
+           legend: {
+             position: "bottom",
+             horizontalAlign: "center",
+             offsetY: 5,
+           },
+         },
+       },
+     ],
+   }
+  })
+  
+  
+  
+  
 
-  render() {
-    return (
-      <div className="area-chart">
-          <ReactChart
-            options={this.state.options}
-            series={this.state.series}
-            height={200}
-            width={630}
-            type="area"
-          />
-        </div>
-     
-    );
-  }
-}
+
+  return (
+    <div className="area-chart">
+      <ReactChart
+        options={options.options}
+        series={options.series}
+        height={200}
+        width={630}
+        type="area"
+      />
+    </div>
+  );
+};
 
 export default Area;

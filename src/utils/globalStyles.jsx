@@ -48,6 +48,8 @@ input::-webkit-inner-spin-button {
     --box-shadow:0px 0px 8px rgba(16, 30, 115, 0.12);
     --text-area:#ABAEAF;
     --outline:#48cae4;
+    --overlay: rgba(0, 0, 0, 0.6);
+    --disabled:#E3DCF4;
 
 
 }
@@ -290,7 +292,19 @@ html {
   font-size: 10px;
 }
 
+.active-side{
+background-color: var(--hover);
+border-radius: 30px;
+color: var(--main-color);
+}
 
+.active-side a{
+  color: var(--main-color);
+}
+
+.active-side path {
+  stroke: var(--main-color);
+}
 
 
 `;

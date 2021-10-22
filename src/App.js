@@ -1,6 +1,6 @@
-import React, { Suspense, lazy, useRef, useState } from "react";
+import React, { Suspense, lazy,  useState } from "react";
 import { ClipLoader } from "react-spinners";
-import { BrowserRouter as Router,  Route } from "react-router-dom";
+import { BrowserRouter as Router,  Route, Switch } from "react-router-dom";
 const NewCustomer = lazy(() => import("pages/Customers/NewCustomer"));
 const Statistics = lazy(() => import("pages/Statistics/Statistics"));
 const GlobalStyle = lazy(() => import("utils/globalStyles"));
@@ -28,7 +28,7 @@ const App = () => {
             />
             <div className="right-sidebar">
               <Heading  hamburger={hamburger} setHamburger={setHamburger}/>
-              
+              <Switch>
               <Route exact path="/">
                 <Sketch></Sketch>
               </Route>
@@ -38,6 +38,7 @@ const App = () => {
               <Route path="/statistics">
                 <Statistics />
               </Route>
+              </Switch>
             </div>
           </div>
         </Suspense>

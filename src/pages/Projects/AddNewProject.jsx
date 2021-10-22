@@ -70,7 +70,7 @@ function AddNewProject() {
               </div>
               <DropdownContainer className="dropdown__container" isOpen={isOpen}>
                 <ul>
-                  <li>"Yaşat" Kompleksi</li>
+                  <li></li>
                 </ul>
               </DropdownContainer>
             </div>
@@ -144,6 +144,7 @@ const DropdownContainer = styled.div`
 
   li {
     list-style-type: none;
+    padding: 10px;
   }
 `;
 

@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Residences } from "components/Data";
+import { Residences } from "components/Data/Data";
 
 function ResidenceGroup() {
   return (

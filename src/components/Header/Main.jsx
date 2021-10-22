@@ -123,7 +123,7 @@ const Hamburger = styled.div`
   span {
     width: 20px;
     height: 2px;
-    background: rgb(119, 119, 119);
+    background: var(--main-color);
     margin-bottom: 6px;
   }
   span:nth-child(3) {
@@ -217,7 +217,7 @@ export const Overlay = styled.label`
   transition:  ${({ hamburger }) => (hamburger ? "opacity 0.3s ease 0s" : "")};
   opacity:  ${({ hamburger }) => (hamburger ? "1" : "")};
   pointer-events: auto;
-  background: rgba(0, 0, 0, 0.6);
+  background: var(--overlay);
 
 }
 `;

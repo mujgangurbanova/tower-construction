@@ -1,4 +1,4 @@
-import { BankInformation } from 'components/Data'
+import { BankInformation } from 'components/Data/Data'
 import React from 'react'
 import styled from 'styled-components'
 

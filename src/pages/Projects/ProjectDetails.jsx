@@ -1,16 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import AddNewProject from "./AddNewProject";
-import Card from "./Card";
-import Filter from "./Filter";
+import Card from "pages/Projects/Card"
 
 function ProjectDetails() {
   return (
     <ProjectDetWrapper>
       <ProjectDetContainer>
         <AddNewProject />
-        <Filter />
-        <Card/>
+        <Card />
       </ProjectDetContainer>
     </ProjectDetWrapper>
   );

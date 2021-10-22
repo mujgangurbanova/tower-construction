@@ -1,5 +1,8 @@
-import React, { Component } from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 import Chart from "react-apexcharts";
+import { useDispatch, useSelector } from "react-redux";
+import { barChartData } from "redux/actionCreators";
 import "styles/App.scss";
 
 function Title() {
@@ -13,86 +16,89 @@ function Title() {
   );
 }
 
-class Bar extends Component {
-  constructor(props) {
-    super(props);
+const Bar = () => {
+  const BarChart = useSelector((state) => state.barChartDataReducer.data);
+  const dispatch = useDispatch();
 
-    this.state = {
-      series: [
-        {
-          data: [600, 550, 450, 350, 250, 200, 150],
+  useEffect(() => {
+    axios
+      .get("/chart.json")
+      .then((res) => dispatch(barChartData(res.data)))
+      .catch((err) => console.log(err));
+  }, [dispatch]);
+
+  const [options] = useState({
+    series: [
+      {
+        data: BarChart.bar,
+      },
+    ],
+
+    options: {
+      chart: {
+        type: "bar",
+        toolbar: {
+          show: false,
         },
-      ],
-      options: {
-        chart: {
-          type: "bar",
-          toolbar: {
-            show: false,
-          },
+      },
+      plotOptions: {
+        bar: {
+          horizontal: true,
+          barHeight: "95%",
+        },
+      },
+      dataLabels: {
+        enabled: true,
+      },
+      xaxis: {
+        categories: BarChart.labels,
+        lines: {
+          show: false,
+        },
+        tooltip: {
+          enabled: false,
         },
 
-        plotOptions: {
-          bar: {
-            horizontal: true,
-            barHeight: "95%",
-          },
+        axisTicks: {
+          show: false,
         },
-        dataLabels: {
-          enabled: true,
+        axisBorder: {
+          show: false,
         },
+        labels: {
+          show: false,
+        },
+      },
 
+      grid: {
         xaxis: {
-          categories: ["B.e", "Ç.a", "Ç.", "C.a", "C.", "Ş.", "B."],
           lines: {
             show: false,
           },
-          tooltip: {
-            enabled: false,
-          },
-
-          axisTicks: {
-            show: false,
-          },
-          axisBorder: {
-            show: false,
-          },
-          labels:{
-            show:false,
-          },
         },
-
-        grid: {
-          xaxis: {
-            lines: {
-              show: false,
-            },
-          },
-          yaxis: {
-            lines: {
-              show: false,
-            },
+        yaxis: {
+          lines: {
+            show: false,
           },
         },
       },
-    };
-  }
+    },
+  });
 
-  render() {
-    return (
-      <div className="chart-wrapper">
-        <div id="chart">
-          <Title />
-          <Chart
-            options={this.state.options}
-            series={this.state.series}
-            type="bar"
-            width={240}
-            height={190}
-          />
-        </div>
+  return (
+    <div className="chart-wrapper">
+      <div id="chart">
+        <Title />
+        <Chart
+          options={options.options}
+          series={options.series}
+          type="bar"
+          width={240}
+          height={190}
+        />
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
 
 export default Bar;

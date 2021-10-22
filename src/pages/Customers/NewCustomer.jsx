@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { BuildingInformationContainer } from "pages/Projects/Sketch";
 import { BuildingInformation } from "pages/Projects/Sketch";
 import styled from "styled-components";
-import { CustomerData } from "components/Data";
+import { CustomerData } from "components/Data/Data";
 import { Toggle } from "pages/Projects/Filter";
 import AccordionContent from "./AccordionContent";
 
@@ -80,7 +80,28 @@ const CustomerLinks = styled.div`
   width: 43%;
 `;
 
-const Links = styled(Toggle)``;
+const Links = styled.button`
+background: transparent;
+  cursor: pointer;
+  border: none;
+  position: relative;
+  margin-right: 10px;
+  text-decoration: none;
+  color: ${({ isToggled }) =>
+    isToggled ? "var(--main-color)" : "var(--secondary-color)"};
+
+  &:after {
+    position: absolute;
+    content: "";
+    width: 6px;
+    height: 6px;
+    background-color: var(--main-color);
+    border-radius: 50%;
+    top: 28px;
+    left: 22px;
+    display: ${({ isToggled }) => (isToggled ? "block" : "none")};
+  }
+`;
 
 const NewCustomerContainer = styled(BuildingInformationContainer)`
   .customers {

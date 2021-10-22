@@ -1,0 +1,22 @@
+
+    {
+        "a": [110, 80, 140, 50, 170, 20, 190, 50, 200, 60, 210, 110],
+      "b": [
+        "Yanvar",
+        "Fevral",
+        "Mart",
+        "Aprel",
+        "May",
+        "Iyun",
+        "Iyul",
+        "Avqust",
+        "Sentyabr",
+        "Oktyabr",
+        "Noyabr",
+        "Dekabr"
+      ],
+      "donut": [2302, 1132, 1090],
+      "label" :["Kredit", "Ipoteka", "Satilib"],
+      "bar": [600, 550, 450, 350, 250, 200, 150],
+      "labels":["B.e", "Ç.a", "Ç.", "C.a", "C.", "Ş.", "B."]
+    }

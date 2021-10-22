@@ -127,6 +127,12 @@ const PaymentTime = styled.div`
   p {
     color: var(--secondary-color);
   }
+
+  &:nth-child(3){
+    p{
+      margin-right: 12px;
+    }
+  }
 `;
 
 const NotificationBtn = styled.button`
