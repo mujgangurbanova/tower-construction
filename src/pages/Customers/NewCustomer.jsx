@@ -3,13 +3,22 @@ import { BuildingInformationContainer } from "pages/Projects/Sketch";
 import { BuildingInformation } from "pages/Projects/Sketch";
 import styled from "styled-components";
 import { CustomerData } from "components/Data/Data";
-import { Toggle } from "pages/Projects/Filter";
 import AccordionContent from "./AccordionContent";
+import Message from "./Message";
+
+
 
 function NewCustomer() {
   const [whichOpen, setWhichOpen] = useState(-1);
   const [isToggled, setIsToggled] = useState(0);
   const toggled = (which) => setIsToggled(which);
+  const [modalIsOpen, setIsOpen] = React.useState(false);
+
+  function openModal() {
+    setIsOpen(true);
+  }
+
+  
 
   return (
     <NewCustomerWrapper>
@@ -60,9 +69,14 @@ function NewCustomer() {
               key={key}
               which={key}
               el={el}
+              openModal={openModal}
             />
           ))}
         </Aside>
+        <Message
+          modalIsOpen={modalIsOpen}
+          setIsOpen={setIsOpen}
+        />
       </NewCustomerContainer>
     </NewCustomerWrapper>
   );
@@ -81,7 +95,7 @@ const CustomerLinks = styled.div`
 `;
 
 const Links = styled.button`
-background: transparent;
+  background: transparent;
   cursor: pointer;
   border: none;
   position: relative;
@@ -122,4 +136,5 @@ const NewCustomerContainer = styled(BuildingInformationContainer)`
   }
 `;
 
-const Aside = styled.aside``;
+const Aside = styled.aside`
+`;

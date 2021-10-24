@@ -6,13 +6,11 @@ import { cardData } from "redux/actionCreators";
 import { useDispatch, useSelector } from "react-redux";
 
 function Card() {
-  const [isToggled, setIsToggled] = useState(0);
-  const [isToggled2, setIsToggled2] = useState(0);
-  const toggled = (which) => setIsToggled(which);
-  const toggled2 = (which2) => setIsToggled2(which2);
-
-  const CardsLists = useSelector((state) => state.cardDataReducer.data);
+  const [currentFilter, setCurrentFilter] = useState("all");
+  const [filter, setFilter] = useState("blokA");
+  const cardsList = useSelector((state) => state.cardDataReducer.data);
   const dispatch = useDispatch();
+  const [selected, setSelected] = useState(undefined);
 
   useEffect(() => {
     axios
@@ -37,29 +35,35 @@ function Card() {
         <FilterContainer>
           <Toggle
             className="toggled-link"
-            onClick={() => toggled(0)}
-            isToggled={isToggled === 0}
+            onClick={() => setSelected() || setCurrentFilter("all")}
+            isToggled={currentFilter === "all"}
           >
             Hamısı
           </Toggle>
           <Toggle
             className="toggled-link"
-            onClick={() => toggled(1)}
-            isToggled={isToggled === 1}
+            onClick={() =>
+              setSelected("Kredit") || setCurrentFilter("availableForCredit")
+            }
+            isToggled={currentFilter === "availableForCredit"}
           >
             Kredit
           </Toggle>
           <Toggle
             className="toggled-link"
-            onClick={() => toggled(2)}
-            isToggled={isToggled === 2}
+            onClick={() =>
+              setSelected("Ipoteka") || setCurrentFilter("availableForMortgage")
+            }
+            isToggled={currentFilter === "availableForMortgage"}
           >
             İpoteka
           </Toggle>
           <Toggle
             className="toggled-link"
-            onClick={() => toggled(3)}
-            isToggled={isToggled === 3}
+            onClick={() =>
+              setSelected("Satılıb") || setCurrentFilter("availableForSold")
+            }
+            isToggled={currentFilter === "availableForSold"}
           >
             Satılıb
           </Toggle>
@@ -69,13 +73,22 @@ function Card() {
           </Input>
           <Block>
             <BlockContainer>
-              <Span onClick={() => toggled2(0)} isToggled2={isToggled2 === 0}>
+              <Span
+                onClick={() => setFilter("blokA")}
+                isToggled={filter === "blokA"}
+              >
                 Blok A
               </Span>
-              <Span onClick={() => toggled2(1)} isToggled2={isToggled2 === 1}>
+              <Span
+                onClick={() => setFilter("blokB")}
+                isToggled={filter === "blokB"}
+              >
                 Blok B
               </Span>
-              <Span onClick={() => toggled2(2)} isToggled2={isToggled2 === 2}>
+              <Span
+                onClick={() => setFilter("blokC")}
+                isToggled={filter === "blokC"}
+              >
                 Blok C
               </Span>
             </BlockContainer>
@@ -84,17 +97,46 @@ function Card() {
       </FilterWrapper>
 
       <CardWrapper>
-        {CardsLists.map((item, key) => (
-          <CardContainer key={key}>
+        {cardsList.map((item, key) => (
+          <CardContainer
+            key={key}
+            style={{
+              background:
+                key === selected || selected === undefined
+                  ? "white"
+                  : "var(--disabled)",
+            }}
+          >
             <CardDetails>
-              <CardTitle style={getColor(item.title)}>{item.id}</CardTitle>
+              <CardTitle
+                className={
+                  item.id === selected || selected === undefined
+                    ? "card-id"
+                    : "card-id disabled"
+                }
+                style={getColor(item.title)}
+              >
+                {item.id}
+              </CardTitle>
               <span
                 style={getPriorityColor(item.title)}
-                className="home-current-status"
+                className={
+                  item.title === selected || selected === undefined
+                    ? "home-current-status"
+                    : "home-current-status disabled"
+                }
               >
                 {item.title}
               </span>
-              <div className="room-size">
+              <div
+                className="room-size"
+                style={{
+                  display:
+                    item.title === selected || selected === undefined
+                      ? ""
+                      : "none",
+                }}
+              >
                 <span>
                   {item.area}
                   <sup>{item.sup}</sup>
@@ -242,10 +284,10 @@ const BlockContainer = styled.div`
 const Span = styled.span`
   transition: 0.3s ease;
   cursor: pointer;
-  background: ${({ isToggled2 }) =>
-    isToggled2 ? "var(--main-color)" : "default"};
-  padding: ${({ isToggled2 }) => (isToggled2 ? "6px 12px" : "0")};
-  border-radius: ${({ isToggled2 }) => (isToggled2 ? "10px" : "0")};
-  color: ${({ isToggled2 }) =>
-    isToggled2 ? "var(--white)" : "var(--secondary-color)"};
+  background: ${({ isToggled }) =>
+    isToggled ? "var(--main-color)" : "default"};
+  padding: ${({ isToggled }) => (isToggled ? "6px 12px" : "0")};
+  border-radius: ${({ isToggled }) => (isToggled ? "10px" : "0")};
+  color: ${({ isToggled }) =>
+    isToggled ? "var(--white)" : "var(--secondary-color)"};
 `;

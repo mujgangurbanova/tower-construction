@@ -1,25 +1,38 @@
 import React from "react";
 import styled from "styled-components";
 
-function AccordionContent({ el, isOpen, setWhichOpen, which }) {
+function AccordionContent({
+  el,
+  isOpen,
+  setWhichOpen,
+  which,
+  openModal
+}) {
+  const getPriorityColor = (status) => {
+    if (status === "Gecikir")
+      return { color: "#8068BF", backgroundColor: "#D0C9E2" };
+    else return { color: "#4C8942", backgroundColor: "#B9DDA8" };
+  };
+  const disableBtn = (button) => {
+    if (button === "Ödənilib")
+      return {
+        display: "none",
+      };
+  };
+
+ 
+
   return (
     <CustomerGroup>
       <CustomerCards
         isOpen={isOpen}
         onClick={() => (isOpen ? setWhichOpen(-1) : setWhichOpen(which))}
       >
-        <CustomerGroupContainer
-          statuscolor={el.statuscolor}
-          statustitle={el.statustitle}
-        >
+        <CustomerGroupContainer>
           <h1>{el.customer}</h1>
           <p>{el.building}</p>
           <p>{el.cost}</p>
-          <p
-            statuscolor={el.statuscolor}
-            statustitle={el.statustitle}
-            className="late-title"
-          >
+          <p style={getPriorityColor(el.status)} className="late-title">
             {el.status}
           </p>
           <Chevron src={el.chevron} alt="chevron" isOpen={isOpen} />
@@ -43,7 +56,13 @@ function AccordionContent({ el, isOpen, setWhichOpen, which }) {
             <h1>{el.duration_status}</h1>
             <p>{el.duration}</p>
           </PaymentTime>
-          <NotificationBtn>{el.button}</NotificationBtn>
+          <NotificationBtn
+          isOpen={isOpen}
+            style={disableBtn(el.status)}
+            onClick={openModal}
+          >
+            {el.button}
+          </NotificationBtn>
         </DropdownContainer>
       </CustomerDropdown>
     </CustomerGroup>
@@ -128,8 +147,8 @@ const PaymentTime = styled.div`
     color: var(--secondary-color);
   }
 
-  &:nth-child(3){
-    p{
+  &:nth-child(3) {
+    p {
       margin-right: 12px;
     }
   }
@@ -142,4 +161,5 @@ const NotificationBtn = styled.button`
   padding: 10px 12px;
   border-radius: 15px;
   cursor: pointer;
+  z-index:${({ isOpen }) => (isOpen ? "" : "-11")}
 `;

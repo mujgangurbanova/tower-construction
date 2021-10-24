@@ -130,7 +130,7 @@ const Hamburger = styled.div`
     width: 14px;
     transition: width 0.15s ease-in-out 0s;
   }
- @media only screen and (min-width:80rem){
+ @media only screen and (min-width:64rem){
    display: none;
  }
 `;

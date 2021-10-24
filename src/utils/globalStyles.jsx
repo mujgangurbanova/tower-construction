@@ -307,6 +307,18 @@ color: var(--main-color);
 }
 
 
+
+ .card-id.disabled{
+  background-color: var(--late-color) !important;
+}
+
+ .room-size.disabled{
+  display: none !important;
+}
+
+ .home-current-status.disabled{
+  color: var(--light-main) !important;
+}
 `;
 
 export default GlobalStyle;
