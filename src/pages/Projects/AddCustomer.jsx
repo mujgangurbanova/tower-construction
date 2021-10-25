@@ -19,7 +19,7 @@ function AddCustomer() {
       customer: empname,
       building: "20",
       cost: "40.000 AZN",
-      status: "Ödənilib",
+      status: "Gecikir",
       lastdate: "Son ödəmə tarixi",
       lastpayment: emplastPayment,
       first_payment: "İlkin ödəniş",
@@ -31,7 +31,7 @@ function AddCustomer() {
       chevron: "fas fa-chevron-down",
       button: "Bildiriş göndər",
     };
-    const url = "http://localhost:3002/employee";
+    const url = "http://localhost:8080/employees";
     axios.post(url, empInfo).then((res) => console.log(res));
     processName("");
     processCreditDuration("");

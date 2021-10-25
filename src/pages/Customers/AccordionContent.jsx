@@ -80,7 +80,7 @@ const CustomerGroupContainer = styled.div`
 
   h1 {
     color: var(--secondary-color);
-    font-size: 1rem;
+    font-size: 14px;
     width: 130px;
   }
   p {
@@ -129,6 +129,7 @@ const DropdownContainer = styled.div`
 `;
 const Chevron = styled.i`
   transform: ${({ isOpen }) => (isOpen ? "rotate(180deg)" : "rotate(0deg)")};
+  color: var(--secondary-color);
 `;
 
 const PaymentTime = styled.div`

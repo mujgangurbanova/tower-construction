@@ -1,0 +1,57 @@
+{
+  "users": [
+    {
+      "customer": "Niyaz Əliyev",
+      "building": "20",
+      "cost": "40.000 AZN",
+      "status": "Gecikir",
+      "lastdate": "Son ödəmə tarixi",
+      "lastpayment": "20.07.2020",
+      "first_payment": "İlkin ödəniş",
+      "firspayment": "28.000 AZN",
+      "month_payment": "Aylıq ödəniş",
+      "monthlypayment": "700 AZN",
+      "duration_status": "Müddəti",
+      "duration": "Ödənilib",
+      "chevron": "fas fa-chevron-down",
+      "button": "Bildiriş göndər"
+    }
+  ],
+  "employees": [
+    
+    {
+      "customer": "Müjgan Qurbanova",
+      "building": "20",
+      "cost": "40.000 AZN",
+      "status": "Ödənilib",
+      "lastdate": "Son ödəmə tarixi",
+      "lastpayment": "2021-10-20",
+      "first_payment": "İlkin ödəniş",
+      "firspayment": "28.000 AZN",
+      "month_payment": "Aylıq ödəniş",
+      "monthlypayment": "700 AZN",
+      "duration_status": "Müddəti",
+      "duration": "Gecikir",
+      "chevron": "fas fa-chevron-down",
+      "button": "Bildiriş göndər",
+      "id": 2
+    },
+    {
+      "customer": "Niyaz Əliyev",
+      "building": "20",
+      "cost": "40.000 AZN",
+      "status": "Gecikir",
+      "lastdate": "Son ödəmə tarixi",
+      "lastpayment": "2021-10-22",
+      "first_payment": "İlkin ödəniş",
+      "firspayment": "10.000 AZN",
+      "month_payment": "Aylıq ödəniş",
+      "monthlypayment": "200 AZN",
+      "duration_status": "Müddəti",
+      "duration": "Gecikir",
+      "chevron": "fas fa-chevron-down",
+      "button": "Bildiriş göndər",
+      "id": 3
+    }
+  ]
+}

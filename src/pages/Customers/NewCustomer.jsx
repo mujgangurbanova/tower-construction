@@ -13,7 +13,7 @@ function NewCustomer() {
   const toggled = (which) => setIsToggled(which);
   const [modalIsOpen, setIsOpen] = React.useState(false);
 
-  const url = "http://localhost:3002/employee"
+  const url = "http://localhost:8080/employees"
   const [empList, updateEmp] = useState([])
 
   const getEmp = () => {
@@ -131,6 +131,7 @@ const Links = styled.button`
 `;
 
 const NewCustomerContainer = styled(BuildingInformationContainer)`
+height: 100vh;
   .customers {
     width: fit-content;
     margin-bottom: 1.25rem;
