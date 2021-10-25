@@ -74,14 +74,14 @@ function NewCustomer() {
           <h3>Status</h3>
         </div>
         <Aside>
-          {empList.map((el, key) => (
+          {empList.map((empInfo, key) => (
             <AccordionContent
               whichOpen={whichOpen}
               setWhichOpen={setWhichOpen}
               isOpen={key === whichOpen}
               key={key}
               which={key}
-              el={el}
+              empInfo={empInfo}
               openModal={openModal}
             />
           ))}

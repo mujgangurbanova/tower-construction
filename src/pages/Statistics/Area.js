@@ -3,22 +3,38 @@ import ReactApexChart from "react-apexcharts";
 import ApexCharts from "apexcharts";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
-import { areaChartData } from "redux/actionCreators";
+import { areaChartData, areaSelection } from "redux/actionCreators";
 function Titles({ selection, setSelection, updateData }) {
   return (
     <div className="sales">
       <span>Satışlar</span>
       <div className="area-chart-title">
-        <button id="all" onClick={() => updateData("all")} className={selection === "all" ? "active-area" : ""}>
+        <button
+          id="all"
+          onClick={() => updateData("all")}
+          className={selection === "all" ? "active-area" : ""}
+        >
           Son 12 ay
         </button>
-        <button id="six_months" onClick={() => updateData("six_months")} className={selection === "six_months" ? "active-area" : ""}>
+        <button
+          id="six_months"
+          onClick={() => updateData("six_months")}
+          className={selection === "six_months" ? "active-area" : ""}
+        >
           Son 8 həftə
         </button>
-        <button id="one-month" onClick={() => updateData("one_month")} className={selection === "one_month" ? "active-area" : ""}>
+        <button
+          id="one-month"
+          onClick={() => updateData("one_month")}
+          className={selection === "one_month" ? "active-area" : ""}
+        >
           Aylıq
         </button>
-        <button id="one-year" onClick={() => updateData("one_year")} className={selection === "one_year" ? "active-area" : ""}>
+        <button
+          id="one-year"
+          onClick={() => updateData("one_year")}
+          className={selection === "one_year" ? "active-area" : ""}
+        >
           2013
         </button>
       </div>
@@ -36,7 +52,8 @@ function Area() {
       .get("/chart.json")
       .then((res) => dispatch(areaChartData(res.data)))
       .catch((err) => console.log(err));
-  }, [dispatch]);
+  // }, [dispatch]);
+  }, []);
 
   const [options] = useState({
     series: [
@@ -127,6 +144,9 @@ function Area() {
   });
 
   const updateData = (timeline) => {
+
+    dispatch(areaSelection(timeline));
+    // console.log('timeline', timeline);
     setSelection(timeline);
 
     switch (timeline) {

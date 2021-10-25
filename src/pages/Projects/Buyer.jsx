@@ -2,9 +2,8 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import info from "images/info.svg";
 import sexsiyyet from "images/sexsiyyet.png";
-import axios from "axios";
 
-function Buyer() {
+function Buyer({ empname, processName }) {
   const [show, setShow] = useState(false);
   function showIcon(e) {
     e.preventDefault();
@@ -18,7 +17,13 @@ function Buyer() {
     <BuyerWrapper>
       <BuyerContainer>
         <Label htmlFor="buyer">Alıcı</Label>
-        <Input autoComplete="off" id="buyer" type="text" />
+        <Input
+          autoComplete="off"
+          id="buyer"
+          type="text"
+          value={empname}
+          onChange={(obj) => processName(obj.target.value)}
+        />
       </BuyerContainer>
       <BuyerContainer>
         <Label htmlFor="phone">Telefon nömrəsi</Label> <br />
@@ -35,7 +40,7 @@ function Buyer() {
       </BuyerContainer>
       <BuyerContainer>
         <Label htmlFor="code">ŞV-nin nömrəsi</Label>
-        <Input autoComplete="off"id="code" type="text" />
+        <Input autoComplete="off" id="code" type="text" />
       </BuyerContainer>
       <BuyerContainer>
         <Label className="icon" htmlFor="card">
@@ -60,7 +65,7 @@ function Buyer() {
       <BuyerContainer>
         <span className="arayis">İş yerindən arayış</span>
         <Input autoComplete="off" type="file" id="file"></Input>
-        <button  className="delete">Sil</button>
+        <button className="delete">Sil</button>
       </BuyerContainer>
     </BuyerWrapper>
   );
@@ -97,18 +102,14 @@ export const BuyerContainer = styled.div`
       margin-right: 5px;
       border: 1px solid #fff;
       border-radius: 5px;
-
     }
-
-    
   }
 
-  .arayis{
-      margin-bottom: 9px;
-      display: block;
-      color: var(--label);
-
-    }
+  .arayis {
+    margin-bottom: 9px;
+    display: block;
+    color: var(--label);
+  }
 
   .payment {
     display: flex;
@@ -119,20 +120,19 @@ export const BuyerContainer = styled.div`
       border-radius: 5px;
     }
 
-    .credit{
+    .credit {
       margin-bottom: 10px;
       color: var(--label);
-
     }
   }
 
-  .delete{
+  .delete {
     background: transparent;
     border: none;
-    color: #DF6161;
+    color: #df6161;
     font-weight: 500;
     position: absolute;
-    top:40px;
+    top: 40px;
     right: 10px;
   }
 `;
@@ -142,9 +142,9 @@ export const PersonalCard = styled.img`
   z-index: 1;
   bottom: -108px;
   left: 83px;
-  opacity: ${({ show }) =>show ? "1" : "0"};
-  visibility: ${({ show }) =>show ? "visible" : "hidden"};
-  transition: ${({ show }) =>show ? ".3s" : ".5s"};
+  opacity: ${({ show }) => (show ? "1" : "0")};
+  visibility: ${({ show }) => (show ? "visible" : "hidden")};
+  transition: ${({ show }) => (show ? ".3s" : ".5s")};
 `;
 
 export const Label = styled.label`

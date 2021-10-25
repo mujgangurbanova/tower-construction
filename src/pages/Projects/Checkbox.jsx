@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-function Checkbox() {
+function Checkbox({save}) {
   return (
     <div className="checkbox">
       <Checked>
@@ -11,7 +11,7 @@ function Checkbox() {
           <span className="checkmark"></span>
         </label>
       </Checked>
-      <button className="add-customers">Alıcını əlavə et</button>
+      <button onClick={save} className="add-customers">Alıcını əlavə et</button>
     </div>
   );
 }

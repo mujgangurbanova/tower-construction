@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { Line } from "./BuildingInformation";
 import Buyer from "./Buyer";
@@ -8,23 +8,58 @@ import Voucher from "./Voucher";
 import axios from "axios";
 
 function AddCustomer() {
-  const [empname, processName] = useState("")
-  const [empduration, processDuration] = useState("")
-  // const [emp, processName] = useState("")
-  // const [empname, processName] = useState("")
-  // const [empname, processName] = useState("")
+  const [empname, processName] = useState("");
+  const [empcreditDuration, processCreditDuration] = useState("");
+  const [empfirstPayment, processFirstPayment] = useState("");
+  const [empmonthPayment, processMonthPayment] = useState("");
+  const [emplastPayment, processlastPayment] = useState("");
+
+  const save = () => {
+    let empInfo = {
+      customer: empname,
+      building: "20",
+      cost: "40.000 AZN",
+      status: "Ödənilib",
+      lastdate: "Son ödəmə tarixi",
+      lastpayment: emplastPayment,
+      first_payment: "İlkin ödəniş",
+      firspayment: empfirstPayment,
+      month_payment: "Aylıq ödəniş",
+      monthlypayment: empmonthPayment,
+      duration_status: "Müddəti",
+      duration: empcreditDuration,
+      chevron: "fas fa-chevron-down",
+      button: "Bildiriş göndər",
+    };
+    const url = "http://localhost:3002/employee";
+    axios.post(url, empInfo).then((res) => console.log(res));
+    processName("");
+    processCreditDuration("");
+    processFirstPayment("");
+    processMonthPayment("");
+    processlastPayment("");
+  };
   return (
     <CustomerGroup>
       <CustomerGroupContainer>
         <h1 className="add-customer">Yeni alıcı əlavə et</h1>
         <FormContainer>
-          <Buyer />
+          <Buyer empname={empname} processName={processName} />
           <LineBottom />
           <Voucher />
           <LineBottom />
-          <Credit/>
+          <Credit
+            empcreditDuration={empcreditDuration}
+            processCreditDuration={processCreditDuration}
+            empfirstPayment={empfirstPayment}
+            processFirstPayment={processFirstPayment}
+            empmonthPayment={empmonthPayment}
+            processMonthPayment={processMonthPayment}
+            emplastPayment={emplastPayment}
+            processlastPayment={processlastPayment}
+          />
         </FormContainer>
-          <Checkbox/>
+        <Checkbox save={save} />
       </CustomerGroupContainer>
     </CustomerGroup>
   );

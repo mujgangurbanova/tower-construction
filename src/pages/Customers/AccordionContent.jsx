@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 function AccordionContent({
-  el,
+  empInfo,
   isOpen,
   setWhichOpen,
   which,
@@ -29,39 +29,39 @@ function AccordionContent({
         onClick={() => (isOpen ? setWhichOpen(-1) : setWhichOpen(which))}
       >
         <CustomerGroupContainer>
-          <h1>{el.customer}</h1>
-          <p>{el.building}</p>
-          <p>{el.cost}</p>
-          <p style={getPriorityColor(el.status)} className="late-title">
-            {el.status}
+          <h1>{empInfo.customer}</h1>
+          <p>{empInfo.building}</p>
+          <p>{empInfo.cost}</p>
+          <p style={getPriorityColor(empInfo.status)} className="late-title">
+            {empInfo.status}
           </p>
-          <Chevron className={el.chevron} alt="chevron" isOpen={isOpen} />
+          <Chevron className={empInfo.chevron} alt="chevron" isOpen={isOpen} />
         </CustomerGroupContainer>
       </CustomerCards>
       <CustomerDropdown isOpen={isOpen}>
         <DropdownContainer>
           <PaymentTime>
-            <h1>{el.lastdate}</h1>
-            <p>{el.lastpayment}</p>
+            <h1>{empInfo.lastdate}</h1>
+            <p>{empInfo.lastpayment}</p>
           </PaymentTime>
           <PaymentTime>
-            <h1>{el.first_payment}</h1>
-            <p>{el.firspayment}</p>
+            <h1>{empInfo.first_payment}</h1>
+            <p>{empInfo.firspayment}</p>
           </PaymentTime>
           <PaymentTime>
-            <h1>{el.month_payment}</h1>
-            <p>{el.monthlypayment}</p>
+            <h1>{empInfo.month_payment}</h1>
+            <p>{empInfo.monthlypayment}</p>
           </PaymentTime>
           <PaymentTime>
-            <h1>{el.duration_status}</h1>
-            <p>{el.duration}</p>
+            <h1>{empInfo.duration_status}</h1>
+            <p>{empInfo.duration}</p>
           </PaymentTime>
           <NotificationBtn
           isOpen={isOpen}
-            style={disableBtn(el.status)}
+            style={disableBtn(empInfo.status)}
             onClick={openModal}
           >
-            {el.button}
+            {empInfo.button}
           </NotificationBtn>
         </DropdownContainer>
       </CustomerDropdown>
