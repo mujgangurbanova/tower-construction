@@ -3,7 +3,6 @@ import React, { useEffect, useState } from "react";
 import Chart from "react-apexcharts";
 import { useDispatch, useSelector } from "react-redux";
 import { barChartData } from "redux/actionCreators";
-import "styles/App.scss";
 
 function Title() {
   return (

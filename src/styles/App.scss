@@ -1,6 +1,6 @@
-
+//*Bar chart style
 .apexcharts-bar-area {
-  fill: #5E44A2 !important;
+  fill: #5e44a2 !important;
   width: 30%;
 }
 
@@ -9,70 +9,322 @@
 }
 
 .apexcharts-bar-area:nth-child(2) {
-  opacity: .7;
+  opacity: 0.7;
 }
 
 .apexcharts-bar-area:nth-child(3) {
-  opacity: .6;
-
+  opacity: 0.6;
 }
 
 .apexcharts-bar-area:nth-child(4) {
-  opacity: .5;
+  opacity: 0.5;
 }
 
 .apexcharts-bar-area:nth-child(5) {
-  opacity: .4;
+  opacity: 0.4;
 }
 
 .apexcharts-bar-area:nth-child(6) {
-  opacity: .3;
+  opacity: 0.3;
 }
 
-.apexcharts-bar-area:nth-child(7)  {
-  opacity: .1;
+.apexcharts-bar-area:nth-child(7) {
+  opacity: 0.1;
 }
 
-
-
-.chart-wrapper{
-    background-color: var(--white);
-    border-radius: 10px;
-    height: 250px;
-    width: 300px;
+.chart-wrapper {
+  background-color: var(--white);
+  border-radius: 10px;
+  height: 250px;
+  width: 300px;
 }
 
-#chart{
-    height: 100%;
-    padding: 10px;
-    width: 100%;
+#chart {
+  height: 100%;
+  padding: 10px;
+  width: 100%;
 }
 
+.title {
+  columns: 2;
+  margin: 0 40px;
+  h1 {
+    color: var(--secondary-color);
+    column-span: all;
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 10px;
+  }
 
-.title{
-    columns: 2;
-    margin: 0 40px;
-    h1{
-        color: var(--secondary-color);
-        column-span: all;
-        font-size: 18px;
-        font-weight: 500;
-        margin-bottom: 10px;
+  a {
+    color: var(--secondary-color);
+    text-decoration: none;
+
+    &:not(:last-child) {
+      margin-right: 1.25rem;
     }
-
-    a{
-        color: var(--secondary-color);
-        text-decoration: none;
-
-        &:not(:last-child){
-            margin-right: 1.25rem;
-        }
-    }
-
-
-
+  }
 }
 
-.area-chart{
+.area-chart {
   border-top: 0.6951px solid var(--chart-border);
+}
+
+//* App wrapper
+.wrapper {
+  max-width: 87.5rem;
+  margin: 0 auto;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+}
+.right-sidebar {
+  display: flex;
+  position: relative;
+  width: 100%;
+  flex-direction: column;
+  margin-left: 20px;
+}
+//*Checkbox styling
+.checkbox {
+  display: flex;
+  margin-top: 20px;
+  align-items: center;
+}
+
+.add-customers {
+  flex: 3;
+  height: 44px;
+  background: var(--orange);
+  border: 1px solid var(--orange);
+  border-radius: 10px;
+  color: var(--white);
+  cursor: pointer;
+  margin-right: 20px;
+}
+
+.check-label {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.check-label input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: var(--orange);
+}
+
+.check-label:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+.check-label input:checked ~ .checkmark {
+  background-color: var(--orange);
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.check-label input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.check-label .checkmark:after {
+  left: 10px;
+  top: 7px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.icon {
+  position: relative;
+}
+#file {
+  background: var(--white);
+  outline: none;
+  position: relative;
+}
+
+::-webkit-file-upload-button {
+  color: var(--white);
+  background: var(--main-color);
+  border: 1px solid var(--main-color);
+  border-radius: 30px;
+  padding: 2px;
+}
+
+//*Loading..
+.loader-wrapper {
+  align-items: center;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+}
+
+.active {
+  transform: translateY(0);
+}
+
+.spinner {
+  position: absolute;
+  top: 60px;
+  display: none;
+
+  .arrow_box {
+    position: relative;
+    background: var(--white);
+    border: 4px solid var(--white);
+    height: 30px;
+    box-shadow: var(--box-shadow);
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    &:after,
+    &:before {
+      bottom: 100%;
+      left: 50%;
+      border: solid transparent;
+      content: "";
+      height: 0;
+      width: 0;
+      position: absolute;
+      pointer-events: none;
+    }
+    &:after {
+      border-color: rgba(255, 255, 255, 0);
+      border-bottom-color: var(--white);
+      border-width: 30px;
+      margin-left: -30px;
+    }
+    &:before {
+      border-color: rgba(255, 255, 255, 0);
+      border-bottom-color: var(--white);
+      border-width: 0;
+    }
+  }
+}
+.spinnerToggle {
+  display: block;
+}
+
+.spinner.message-spinner {
+  left: -41px;
+}
+.spinner.notification-spinner {
+  left: 4px;
+}
+
+//*Donut chart
+.chartContainer {
+  margin: 0 auto;
+  margin-top: 10px;
+  max-width: 100%;
+  position: relative;
+  width: 220px;
+}
+.chartInner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: absolute;
+  top: 42%;
+  right: 20%;
+  bottom: 18%;
+  left: 42%;
+  border-radius: 50%;
+  line-height: 100%;
+  overflow: hidden;
+}
+
+.chartTarget,
+.chartDaysLabel {
+  font-size: 10px;
+}
+
+//*Sidebar links
+.active-side {
+  background-color: var(--hover);
+  border-radius: 30px;
+  color: var(--main-color);
+}
+
+.active-side a {
+  color: var(--main-color);
+}
+
+.active-side path {
+  stroke: var(--main-color);
+}
+
+//*Cards filter
+.card-id.disabled {
+  background-color: var(--late-color) !important;
+}
+
+.room-size.disabled {
+  display: none !important;
+}
+
+.home-current-status.disabled {
+  color: var(--light-main) !important;
+}
+
+.sales {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0 10px 10px;
+
+  span {
+    font-size: 16px;
+  }
+
+  button {
+    color: var(--light-black);
+    font-size: 12px;
+    margin-right: 20px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+  }
+}
+
+
+//*Area chart title
+.active-area {
+  color: var(--main-color) !important;
+  font-weight: bold;
 }

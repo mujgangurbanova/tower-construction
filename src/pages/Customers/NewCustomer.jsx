@@ -1,8 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { BuildingInformationContainer } from "pages/Projects/Sketch";
 import { BuildingInformation } from "pages/Projects/Sketch";
 import styled from "styled-components";
-import { CustomerData } from "components/Data/Data";
 import AccordionContent from "./AccordionContent";
 import Message from "./Message";
 
@@ -13,6 +12,20 @@ function NewCustomer() {
   const [isToggled, setIsToggled] = useState(0);
   const toggled = (which) => setIsToggled(which);
   const [modalIsOpen, setIsOpen] = React.useState(false);
+
+  const url = "http://localhost:3002/employee"
+  const [empList, updateEmp] = useState([])
+
+  const getEmp = () => {
+    fetch(url)
+    .then(res => res.json())
+    .then(allEmp => updateEmp(allEmp))
+  }
+
+
+  useEffect(() => {
+    getEmp()
+  },[true])
 
   function openModal() {
     setIsOpen(true);
@@ -61,7 +74,7 @@ function NewCustomer() {
           <h3>Status</h3>
         </div>
         <Aside>
-          {CustomerData.map((el, key) => (
+          {empList.map((el, key) => (
             <AccordionContent
               whichOpen={whichOpen}
               setWhichOpen={setWhichOpen}

@@ -1,12 +1,18 @@
-import React from "react";
+import React,{useState} from "react";
 import styled from "styled-components";
 import { Line } from "./BuildingInformation";
 import Buyer from "./Buyer";
 import Checkbox from "./Checkbox";
 import Credit from "./Credit";
 import Voucher from "./Voucher";
+import axios from "axios";
 
 function AddCustomer() {
+  const [empname, processName] = useState("")
+  const [empduration, processDuration] = useState("")
+  // const [emp, processName] = useState("")
+  // const [empname, processName] = useState("")
+  // const [empname, processName] = useState("")
   return (
     <CustomerGroup>
       <CustomerGroupContainer>
@@ -40,7 +46,7 @@ const CustomerGroupContainer = styled.div`
   }
 `;
 
-const FormContainer = styled.form``;
+const FormContainer = styled.div``;
 
 const LineBottom = styled(Line)`
   background-color: var(--border-color);

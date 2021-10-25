@@ -36,13 +36,16 @@ function Message({ modalIsOpen, setIsOpen }) {
   }
 
   function sent() {
-    setMessage(!message);
-    setTimeout(() => {
-      setMessage(message);
-      closeModal();
-      setInputValue("")
-
-    }, 300);
+    if(inputValue){
+      setMessage(!message);
+      setTimeout(() => {
+        setMessage(message);
+        closeModal();
+        setInputValue("")
+  
+      }, 300);
+  
+    }
   }
 
   return (

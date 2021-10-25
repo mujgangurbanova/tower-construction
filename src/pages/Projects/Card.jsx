@@ -29,14 +29,16 @@ function Card() {
     else if (id === "Kredit") return { backgroundColor: "#FDA242" };
     else return { backgroundColor: "#3B7EA4" };
   };
+
   return (
     <>
       <FilterWrapper>
-        <FilterContainer>
+        <FilterContainer className="buttonsContainer">
           <Toggle
             className="toggled-link"
             onClick={() => setSelected() || setCurrentFilter("all")}
             isToggled={currentFilter === "all"}
+            toggledColor="var(--main-color)"
           >
             Hamısı
           </Toggle>
@@ -46,6 +48,7 @@ function Card() {
               setSelected("Kredit") || setCurrentFilter("availableForCredit")
             }
             isToggled={currentFilter === "availableForCredit"}
+            toggledColor="var(--orange)"
           >
             Kredit
           </Toggle>
@@ -55,6 +58,7 @@ function Card() {
               setSelected("Ipoteka") || setCurrentFilter("availableForMortgage")
             }
             isToggled={currentFilter === "availableForMortgage"}
+            toggledColor="var(--blue)"
           >
             İpoteka
           </Toggle>
@@ -64,6 +68,7 @@ function Card() {
               setSelected("Satılıb") || setCurrentFilter("availableForSold")
             }
             isToggled={currentFilter === "availableForSold"}
+            toggledColor="var(--light-main)"
           >
             Satılıb
           </Toggle>
@@ -72,7 +77,7 @@ function Card() {
             <img src={search} alt="search-ground" />
           </Input>
           <Block>
-            <BlockContainer>
+            <BlockContainer >
               <Span
                 onClick={() => setFilter("blokA")}
                 isToggled={filter === "blokA"}
@@ -98,23 +103,15 @@ function Card() {
 
       <CardWrapper>
         {cardsList.map((item, key) => (
-          <CardContainer
-            key={key}
-            style={{
-              background:
-                key === selected || selected === undefined
-                  ? "white"
-                  : "var(--disabled)",
-            }}
-          >
+          <CardContainer key={key}>
             <CardDetails>
               <CardTitle
+                style={getColor(item.title)}
                 className={
-                  item.id === selected || selected === undefined
-                    ? "card-id"
+                  item.title === selected || selected === undefined
+                    ? ""
                     : "card-id disabled"
                 }
-                style={getColor(item.title)}
               >
                 {item.id}
               </CardTitle>
@@ -228,15 +225,17 @@ export const Toggle = styled.button`
   position: relative;
   margin-right: 10px;
   text-decoration: none;
-  color: ${({ isToggled }) =>
-    isToggled ? "var(--main-color)" : "var(--secondary-color)"};
+  color: ${({ isToggled, toggledColor }) =>
+    isToggled ? toggledColor : "var(--secondary-color)"};
+  font-weight: ${({ isToggled }) => (isToggled ? "bold" : "")};
 
   &:after {
     position: absolute;
     content: "";
     width: 6px;
     height: 6px;
-    background-color: var(--main-color);
+    background-color: ${({ isToggled, toggledColor }) =>
+      isToggled ? toggledColor : "var(--secondary-color)"};
     border-radius: 50%;
     top: 28px;
     left: 22px;
@@ -278,15 +277,17 @@ const BlockContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px 20px;
 `;
 
-const Span = styled.span`
-  transition: 0.3s ease;
+const Span = styled.button`
+  transition: 0.3s all;
   cursor: pointer;
+  border: none;
   background: ${({ isToggled }) =>
-    isToggled ? "var(--main-color)" : "default"};
-  padding: ${({ isToggled }) => (isToggled ? "6px 12px" : "0")};
+    isToggled ? "var(--main-color)" : "transparent"};
+  padding: ${({ isToggled }) => (isToggled ? "6px 20px" : "")};
+  margin:  ${({ isToggled }) => (isToggled ? "" : "0 20px")};
+  height: ${({ isToggled }) => (isToggled ? "50px" : "")};
   border-radius: ${({ isToggled }) => (isToggled ? "10px" : "0")};
   color: ${({ isToggled }) =>
     isToggled ? "var(--white)" : "var(--secondary-color)"};

@@ -130,7 +130,7 @@ const Hamburger = styled.div`
     width: 14px;
     transition: width 0.15s ease-in-out 0s;
   }
- @media only screen and (min-width:64rem){
+ @media only screen and (min-width:85rem){
    display: none;
  }
 `;
@@ -211,7 +211,7 @@ const Input = styled.input`
 
 
 export const Overlay = styled.label`
-@media only screen and (max-width:64rem){
+@media only screen and (min-width:64rem) and (max-width:85rem){
   position: ${({ hamburger }) => (hamburger ? "fixed" : "initial")};
   inset: ${({ hamburger }) => (hamburger ? "0" : "")};
   transition:  ${({ hamburger }) => (hamburger ? "opacity 0.3s ease 0s" : "")};

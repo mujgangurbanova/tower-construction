@@ -25,7 +25,7 @@ function Voucher() {
     <BuyerWrapper>
       <VoucherContainer>
         <Label htmlFor="buyer">Zamin</Label>
-        <Input id="buyer" type="text"  />
+        <Input autoComplete="off" id="buyer" type="text"  />
       </VoucherContainer>
       <VoucherContainer>
         <Label htmlFor="phone">Telefon nömrəsi</Label> <br />
@@ -37,12 +37,12 @@ function Voucher() {
             <option>70</option>
             <option>77</option>
           </select>
-          <Input id="phone" type="number"  />
+          <Input autoComplete="off" id="phone" type="number"  />
         </div>
       </VoucherContainer>
       <VoucherContainer>
         <Label htmlFor="code">ŞV-nin nömrəsi</Label>
-        <Input id="code" type="text" />
+        <Input autoComplete="off"id="code" type="text" />
       </VoucherContainer>
       <VoucherContainer>
         <Label className="icon" htmlFor="card">Fin Kod
@@ -52,7 +52,7 @@ function Voucher() {
         <PersonalCardImage show ={show} src={sexsiyyet}/>
         
 </Label>
-        <Input id="card" type="text" />
+        <Input autoComplete="off" id="card" type="text" />
       </VoucherContainer>
       
 
@@ -63,6 +63,11 @@ function Voucher() {
 export default Voucher;
 
 const VoucherContainer = styled(BuyerContainer)`
+select{
+  border: 1px solid #fff;
+      border-radius: 5px;
+
+}
 
 
 `

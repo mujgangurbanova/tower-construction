@@ -35,7 +35,7 @@ function AccordionContent({
           <p style={getPriorityColor(el.status)} className="late-title">
             {el.status}
           </p>
-          <Chevron src={el.chevron} alt="chevron" isOpen={isOpen} />
+          <Chevron className={el.chevron} alt="chevron" isOpen={isOpen} />
         </CustomerGroupContainer>
       </CustomerCards>
       <CustomerDropdown isOpen={isOpen}>
@@ -127,7 +127,7 @@ const DropdownContainer = styled.div`
   align-items: center;
   padding: 5px 20px;
 `;
-const Chevron = styled.img`
+const Chevron = styled.i`
   transform: ${({ isOpen }) => (isOpen ? "rotate(180deg)" : "rotate(0deg)")};
 `;
 

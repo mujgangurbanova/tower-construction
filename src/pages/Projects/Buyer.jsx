@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import info from "images/info.svg";
 import sexsiyyet from "images/sexsiyyet.png";
+import axios from "axios";
 
 function Buyer() {
   const [show, setShow] = useState(false);
@@ -17,7 +18,7 @@ function Buyer() {
     <BuyerWrapper>
       <BuyerContainer>
         <Label htmlFor="buyer">Alıcı</Label>
-        <Input id="buyer" type="text" />
+        <Input autoComplete="off" id="buyer" type="text" />
       </BuyerContainer>
       <BuyerContainer>
         <Label htmlFor="phone">Telefon nömrəsi</Label> <br />
@@ -29,12 +30,12 @@ function Buyer() {
             <option>70</option>
             <option>77</option>
           </select>
-          <Input id="phone" type="number" />
+          <Input autoComplete="off" id="phone" type="number" />
         </div>
       </BuyerContainer>
       <BuyerContainer>
         <Label htmlFor="code">ŞV-nin nömrəsi</Label>
-        <Input id="code" type="text" />
+        <Input autoComplete="off"id="code" type="text" />
       </BuyerContainer>
       <BuyerContainer>
         <Label className="icon" htmlFor="card">
@@ -45,7 +46,7 @@ function Buyer() {
           <PersonalCard src={sexsiyyet} show={show} alt="" />
         </Label>
 
-        <Input id="card" type="text" />
+        <Input autoComplete="off" id="card" type="text" />
       </BuyerContainer>
       <BuyerContainer>
         <div className="payment">
@@ -57,8 +58,9 @@ function Buyer() {
         </div>
       </BuyerContainer>
       <BuyerContainer>
-        <span>İş yerindən arayış</span>
-        <Input type="file" id="file"></Input>
+        <span className="arayis">İş yerindən arayış</span>
+        <Input autoComplete="off" type="file" id="file"></Input>
+        <button  className="delete">Sil</button>
       </BuyerContainer>
     </BuyerWrapper>
   );
@@ -93,15 +95,45 @@ export const BuyerContainer = styled.div`
     display: flex;
     select {
       margin-right: 5px;
+      border: 1px solid #fff;
+      border-radius: 5px;
+
     }
+
+    
   }
+
+  .arayis{
+      margin-bottom: 9px;
+      display: block;
+      color: var(--label);
+
+    }
 
   .payment {
     display: flex;
     flex-direction: column;
     select {
       height: 31px;
+      border: 1px solid #fff;
+      border-radius: 5px;
     }
+
+    .credit{
+      margin-bottom: 10px;
+      color: var(--label);
+
+    }
+  }
+
+  .delete{
+    background: transparent;
+    border: none;
+    color: #DF6161;
+    font-weight: 500;
+    position: absolute;
+    top:40px;
+    right: 10px;
   }
 `;
 
@@ -124,6 +156,8 @@ export const Label = styled.label`
 export const Input = styled.input`
   padding: 5px;
   width: 100%;
+  border-radius: 5px;
+  border: 1px solid #fff;
   &:focus {
     outline: none !important;
   }
