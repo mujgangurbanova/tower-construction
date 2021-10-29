@@ -52,8 +52,7 @@ function Area() {
       .get("/chart.json")
       .then((res) => dispatch(areaChartData(res.data)))
       .catch((err) => console.log(err));
-  // }, [dispatch]);
-  }, []);
+  }, [dispatch]);
 
   const [options] = useState({
     series: [
@@ -79,7 +78,7 @@ function Area() {
       annotations: {
         xaxis: [
           {
-            x: new Date("14 Nov 2021").getTime(),
+            x: new Date("14 Nov 2013").getTime(),
           },
         ],
       },
@@ -146,7 +145,6 @@ function Area() {
   const updateData = (timeline) => {
 
     dispatch(areaSelection(timeline));
-    // console.log('timeline', timeline);
     setSelection(timeline);
 
     switch (timeline) {

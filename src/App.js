@@ -1,6 +1,6 @@
 import React, { Suspense, lazy,  useState } from "react";
 import { ClipLoader } from "react-spinners";
-import { BrowserRouter as HashRouter,  Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router,  Route, Switch } from "react-router-dom";
 const NewCustomer = lazy(() => import("pages/Customers/NewCustomer"));
 const Statistics = lazy(() => import("pages/Statistics/Statistics"));
 const GlobalStyle = lazy(() => import("utils/globalStyles"));
@@ -13,7 +13,7 @@ const App = () => {
 
   return (
     <div className="wrapper">
-      <HashRouter>
+      <Router>
         <Suspense
           fallback={
             <div className="loader-wrapper">
@@ -30,7 +30,7 @@ const App = () => {
               <Heading  hamburger={hamburger} setHamburger={setHamburger}/>
               <Switch>
               <Route exact path="/">
-                <Sketch></Sketch>
+                <Sketch/>
               </Route>
               <Route path="/customers">
                 <NewCustomer />
@@ -42,7 +42,7 @@ const App = () => {
             </div>
           </div>
         </Suspense>
-      </HashRouter>
+      </Router>
     </div>
   );
 }

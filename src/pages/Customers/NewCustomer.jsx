@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
+import { Helmet } from "react-helmet";
 import { BuildingInformationContainer } from "pages/Projects/Sketch";
 import { BuildingInformation } from "pages/Projects/Sketch";
 import styled from "styled-components";
 import AccordionContent from "./AccordionContent";
 import Message from "./Message";
+import axios from "axios";
 
 
 
@@ -17,15 +19,16 @@ function NewCustomer() {
   const [empList, updateEmp] = useState([])
 
   const getEmp = () => {
-    fetch(url)
-    .then(res => res.json())
-    .then(allEmp => updateEmp(allEmp))
+    axios.get(url)
+    .then((res)=>{
+      updateEmp(res.data);
+    })
   }
 
 
   useEffect(() => {
     getEmp()
-  },[true])
+  },[])
 
   function openModal() {
     setIsOpen(true);
@@ -34,6 +37,12 @@ function NewCustomer() {
   
 
   return (
+    <>
+    <Helmet>
+        <meta charSet="utf-8" />
+        <title>Müştərilər</title>
+
+    </Helmet>
     <NewCustomerWrapper>
       <NewCustomerContainer>
         <h1 className="customers">Müştərilər</h1>
@@ -92,6 +101,7 @@ function NewCustomer() {
         />
       </NewCustomerContainer>
     </NewCustomerWrapper>
+    </>
   );
 }
 

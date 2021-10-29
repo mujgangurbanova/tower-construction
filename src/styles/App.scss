@@ -85,31 +85,26 @@
   position: relative;
   width: 100%;
   flex-direction: column;
-  margin-left: 20px;
 }
 //*Checkbox styling
 .checkbox {
   display: flex;
-  margin-top: 20px;
   align-items: center;
 }
 
 .add-customers {
-  flex: 3;
-  height: 44px;
+  height: 43px;
   background: var(--orange);
   border: 1px solid var(--orange);
   border-radius: 10px;
   color: var(--white);
   cursor: pointer;
-  margin-right: 20px;
 }
 
 .check-label {
   display: block;
   position: relative;
   padding-left: 35px;
-  margin-bottom: 12px;
   cursor: pointer;
   font-size: 22px;
   -webkit-user-select: none;
@@ -247,32 +242,6 @@
   left: 4px;
 }
 
-//*Donut chart
-.chartContainer {
-  margin: 0 auto;
-  margin-top: 10px;
-  max-width: 100%;
-  position: relative;
-  width: 220px;
-}
-.chartInner {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  position: absolute;
-  top: 42%;
-  right: 20%;
-  bottom: 18%;
-  left: 42%;
-  border-radius: 50%;
-  line-height: 100%;
-  overflow: hidden;
-}
-
-.chartTarget,
-.chartDaysLabel {
-  font-size: 10px;
-}
 
 //*Sidebar links
 .active-side {
@@ -327,4 +296,19 @@
 .active-area {
   color: var(--main-color) !important;
   font-weight: bold;
+}
+input[type="date"]::-webkit-calendar-picker-indicator,
+input[type="date"]::-webkit-inner-spin-button{
+    opacity: 0;
+}
+
+.far{
+  position: absolute;
+  color: var(--secondary-color);
+  top: 45px;
+  right: 9px;
+}
+
+.apexcharts-legend{
+  top: 50px !important;
 }

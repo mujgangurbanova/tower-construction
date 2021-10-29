@@ -37,6 +37,8 @@ function Voucher() {
             <option>70</option>
             <option>77</option>
           </select>
+          <i className="fas fa-chevron-down"></i>
+
           <Input autoComplete="off" id="phone" type="number"  />
         </div>
       </VoucherContainer>
@@ -66,6 +68,11 @@ const VoucherContainer = styled(BuyerContainer)`
 select{
   border: 1px solid #fff;
       border-radius: 5px;
+      padding: 0 10px;
+      position: relative;
+      cursor: pointer;
+      -webkit-appearance: none;
+      width: 70px;
 
 }
 

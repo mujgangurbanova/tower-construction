@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import info from "images/info.svg";
 import sexsiyyet from "images/sexsiyyet.png";
+import pdf from "images/pdf.png";
 
 function Buyer({ empname, processName }) {
   const [show, setShow] = useState(false);
@@ -13,6 +14,22 @@ function Buyer({ empname, processName }) {
       setShow(true);
     }
   }
+
+  useEffect(() => {
+    document
+      .getElementById("actual-btn")
+      .addEventListener("change", (event) => {
+        document.getElementById("file-chosen").textContent =
+          event.target.files[0].name;
+      });
+  }, []);
+
+  function resetInput(){
+    document.getElementById("file-chosen").textContent = "Fayl seçilməyib"
+
+  }
+
+
   return (
     <BuyerWrapper>
       <BuyerContainer>
@@ -35,6 +52,8 @@ function Buyer({ empname, processName }) {
             <option>70</option>
             <option>77</option>
           </select>
+          <i className="fas fa-chevron-down"></i>
+
           <Input autoComplete="off" id="phone" type="number" />
         </div>
       </BuyerContainer>
@@ -60,12 +79,20 @@ function Buyer({ empname, processName }) {
             <option>Kredit</option>
             <option>Nəğd</option>
           </select>
+          <i className="fas fa-chevron-down"></i>
         </div>
       </BuyerContainer>
       <BuyerContainer>
         <span className="arayis">İş yerindən arayış</span>
-        <Input autoComplete="off" type="file" id="file"></Input>
-        <button className="delete">Sil</button>
+        <div className="choose-file">
+          <label htmlFor="actual-btn" className="custom-file-upload">
+            Faylı seç
+            <input type="file" id="actual-btn" />
+          </label>
+          <img src={pdf} alt="icon" />
+          <span id="file-chosen">Fayl seçilməyib</span>
+        </div>
+        <button className="delete" onClick={resetInput}>Sil</button>
       </BuyerContainer>
     </BuyerWrapper>
   );
@@ -96,12 +123,65 @@ export const InfoButton = styled.button`
 
 export const BuyerContainer = styled.div`
   position: relative;
+
+  input[type="file"] {
+    display: none;
+  }
+
+  .choose-file {
+    background-color: var(--white);
+    padding: 5px;
+
+    img {
+      position: absolute;
+      left: 112px;
+      top: 42px;
+    }
+
+    #file-chosen {
+      margin-left: 44px;
+      font-size: 12px;
+    }
+  }
+  .custom-file-upload {
+    border: 1px solid #8970c9;
+    border-radius: 20px;
+    background-color: #8970c9;
+    display: inline-block;
+    color: var(--white);
+    padding: 5px 10px;
+    cursor: pointer;
+    position: relative;
+
+    &:after {
+      position: absolute;
+      background-color: #cacbcb;
+      content: "";
+      width: 1px;
+      height: 45px;
+      left: 95px;
+      top: -7px;
+    }
+  }
+
   .phone-number {
     display: flex;
     select {
       margin-right: 5px;
+      width: 70px;
+      position: relative;
       border: 1px solid #fff;
       border-radius: 5px;
+      -webkit-appearance: none;
+      padding: 0 10px;
+      cursor: pointer;
+    }
+    .fas {
+      position: absolute;
+      top: 44px;
+      left: 38px;
+      font-size: 14px;
+      color: var(--secondary-color);
     }
   }
 
@@ -115,9 +195,22 @@ export const BuyerContainer = styled.div`
     display: flex;
     flex-direction: column;
     select {
-      height: 31px;
+      position: relative;
+      height: 43px;
       border: 1px solid #fff;
+      -webkit-appearance: none;
+      padding: 0 10px;
       border-radius: 5px;
+      cursor: pointer;
+
+    }
+
+    .fas {
+      position: absolute;
+      top: 45px;
+      left: 255px;
+      font-size: 14px;
+      color: var(--secondary-color);
     }
 
     .credit {
@@ -132,8 +225,10 @@ export const BuyerContainer = styled.div`
     color: #df6161;
     font-weight: 500;
     position: absolute;
-    top: 40px;
+    font-size: 10px;
+    top: 46px;
     right: 10px;
+    cursor: pointer;
   }
 `;
 
@@ -155,6 +250,7 @@ export const Label = styled.label`
 
 export const Input = styled.input`
   padding: 5px;
+  height: 43px;
   width: 100%;
   border-radius: 5px;
   border: 1px solid #fff;

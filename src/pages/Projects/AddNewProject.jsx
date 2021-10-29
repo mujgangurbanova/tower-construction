@@ -128,9 +128,8 @@ const Complex = styled.div`
 `;
 
 const DropdownContainer = styled.div`
-  background-color: var(--background);
+  background-color: var(--white);
   border: 1px solid var(--border);
-  border-radius: 5px;
   max-height: 6.25rem;
   padding: 0.3125rem;
   position: absolute;

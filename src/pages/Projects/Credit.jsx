@@ -3,6 +3,7 @@ import { Input } from "./Buyer";
 import { Label } from "./Buyer";
 import { BuyerContainer } from "./Buyer";
 import { BuyerWrapper } from "./Buyer";
+import styled from "styled-components";
 
 function Credit({
   empcreditDuration,
@@ -13,6 +14,7 @@ function Credit({
   processMonthPayment,
   emplastPayment,
   processlastPayment,
+  save,
 }) {
   return (
     <BuyerWrapper>
@@ -48,16 +50,42 @@ function Credit({
       </BuyerContainer>
       <BuyerContainer>
         <Label htmlFor="buyer">Ödəniş tarixi</Label>
-        <Input
+        <DateInput
           autoComplete="off"
           id="buyer"
           type="date"
           value={emplastPayment}
           onChange={(obj) => processlastPayment(obj.target.value)}
         />
+        <i className="far fa-calendar"></i>
       </BuyerContainer>
+      <div className="checkbox">
+        <Checked>
+          <label className="check-label">
+            İlkin ödəniş olunub
+            <input type="checkbox" />
+            <span className="checkmark"></span>
+          </label>
+        </Checked>
+      </div>
+
+      <button onClick={save} className="add-customers">
+        Alıcını əlavə et
+      </button>
     </BuyerWrapper>
   );
 }
 
 export default Credit;
+
+const Checked = styled.div`
+  label {
+    color: var(--secondary-color);
+  }
+`;
+
+const DateInput = styled(Input)`
+position: relative;
+
+
+`

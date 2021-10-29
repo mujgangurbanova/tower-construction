@@ -18,7 +18,6 @@
     }
   ],
   "employees": [
-    
     {
       "customer": "Müjgan Qurbanova",
       "building": "20",
@@ -31,7 +30,7 @@
       "month_payment": "Aylıq ödəniş",
       "monthlypayment": "700 AZN",
       "duration_status": "Müddəti",
-      "duration": "Gecikir",
+      "duration": "Ödənilib",
       "chevron": "fas fa-chevron-down",
       "button": "Bildiriş göndər",
       "id": 2
@@ -53,5 +52,6 @@
       "button": "Bildiriş göndər",
       "id": 3
     }
+   
   ]
 }

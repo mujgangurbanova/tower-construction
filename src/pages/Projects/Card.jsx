@@ -285,7 +285,7 @@ const Span = styled.button`
   border: none;
   background: ${({ isToggled }) =>
     isToggled ? "var(--main-color)" : "transparent"};
-  padding: ${({ isToggled }) => (isToggled ? "6px 20px" : "")};
+  padding: ${({ isToggled }) => (isToggled ? "6px 30px" : "")};
   margin:  ${({ isToggled }) => (isToggled ? "" : "0 20px")};
   height: ${({ isToggled }) => (isToggled ? "50px" : "")};
   border-radius: ${({ isToggled }) => (isToggled ? "10px" : "0")};

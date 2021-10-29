@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { Line } from "./BuildingInformation";
 import Buyer from "./Buyer";
-import Checkbox from "./Checkbox";
 import Credit from "./Credit";
 import Voucher from "./Voucher";
 import axios from "axios";
@@ -30,7 +29,9 @@ function AddCustomer() {
       duration: empcreditDuration,
       chevron: "fas fa-chevron-down",
       button: "Bildiriş göndər",
-    };
+    }
+    
+    
     const url = "http://localhost:8080/employees";
     axios.post(url, empInfo).then((res) => console.log(res));
     processName("");
@@ -57,9 +58,9 @@ function AddCustomer() {
             processMonthPayment={processMonthPayment}
             emplastPayment={emplastPayment}
             processlastPayment={processlastPayment}
+            save={save}
           />
         </FormContainer>
-        <Checkbox save={save} />
       </CustomerGroupContainer>
     </CustomerGroup>
   );

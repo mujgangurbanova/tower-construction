@@ -1,6 +1,7 @@
 import { BuildingInformationContainer } from "pages/Projects/Sketch";
 import { BuildingInformation } from "pages/Projects/Sketch";
 import React from "react";
+import { Helmet } from "react-helmet";
 import styled from "styled-components";
 import Area from "./Area";
 import Bar from "./Bar";
@@ -10,6 +11,11 @@ import ResidenceGroup from "./ResidenceGroup";
 
 function Statistics() {
   return (
+    <>
+    <Helmet>
+    <meta charSet="utf-8" />
+        <title>Statistika</title>
+    </Helmet>
     <StatisticsWrapper>
       <StatisticsContainer>
         <Sales>
@@ -31,6 +37,7 @@ function Statistics() {
         </TopProjectSales>
       </StatisticsContainer>
     </StatisticsWrapper>
+    </>
   );
 }
 
@@ -65,6 +72,8 @@ const DonutTotal = styled.div`
   border-radius: 10px;
   height: 250px;
   width: 300px;
+  display: flex;
+  align-items: center;
 `;
 
 const TopProjectSales = styled.div`
