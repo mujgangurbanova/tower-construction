@@ -33,7 +33,7 @@ const Navbar = ({ hamburger, setHamburger }) => {
   //destructuring pathname from location
   const { pathname } = location;
 
-  //Javascript split method to get the name of the path in array
+  // split method to get the name of the path in array
   const splitLocation = pathname.split("/");
 
   return (

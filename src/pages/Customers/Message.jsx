@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import Modal from "react-modal";
+import * as R from "ramda";
 const customStyles = {
   content: {
     top: "50%",
@@ -21,7 +22,7 @@ function Message({ modalIsOpen, setIsOpen }) {
 
   const handleChange = (e) => {
     setInputValue(e.target.value);
-    let input = e.target.value;
+    let input = R.trim(e.target.value);
     if (input.length > 0) {
       setDisabled(false);
     } else {

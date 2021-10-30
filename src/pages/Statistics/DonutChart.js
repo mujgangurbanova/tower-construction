@@ -30,6 +30,7 @@ const DonutChart = () => {
       enabled: false,
     },
     plotOptions: {
+      borderWidth: 15,
       pie: {
         customScale: 1,
         donut: {
@@ -38,12 +39,17 @@ const DonutChart = () => {
             show: true,
             total: {
               show: true,
+              label: "Ümumi",
+              
               fontSize: "12px",
               color: "#1E265E",
             },
           },
         },
       },
+    },
+    stroke: {
+      width: 0,
     },
   });
   const series = Donut.donut;
