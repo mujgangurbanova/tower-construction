@@ -50,28 +50,24 @@ function NewCustomer() {
           <Links
             onClick={() => toggled(0)}
             isToggled={isToggled === 0}
-            href="#!"
           >
             Hamısı
           </Links>
           <Links
             onClick={() => toggled(1)}
             isToggled={isToggled === 1}
-            href="#!"
           >
             Kredit
           </Links>
           <Links
             onClick={() => toggled(2)}
             isToggled={isToggled === 2}
-            href="#!"
           >
             İpoteka
           </Links>
           <Links
             onClick={() => toggled(3)}
             isToggled={isToggled === 3}
-            href="#!"
           >
             Nəğd
           </Links>
