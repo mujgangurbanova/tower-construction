@@ -5,15 +5,15 @@ import { Residences } from "components/Data/Data";
 function ResidenceGroup() {
   return (
     <ResidenceGroupWrapper>
-        <ResidenceGroupContainer>
-      {Residences.map(({img,title,cost},key) => (
+      <ResidenceGroupContainer>
+        {Residences.map(({ img, title, cost }, key) => (
           <ResidenceCard key={key}>
             <img src={img} alt="Residence" />
             <p>{title}</p>
             <span>{cost}</span>
           </ResidenceCard>
-      ))}
-        </ResidenceGroupContainer>
+        ))}
+      </ResidenceGroupContainer>
     </ResidenceGroupWrapper>
   );
 }
@@ -30,7 +30,7 @@ const ResidenceGroupContainer = styled.div`
 `;
 
 const ResidenceCard = styled.div`
-width: 105px;
+  width: 105px;
   img {
     border-radius: 10px;
   }

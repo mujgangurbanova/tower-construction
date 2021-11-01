@@ -5,6 +5,7 @@ import sexsiyyet from "images/sexsiyyet.png";
 import pdf from "images/pdf.png";
 
 function Buyer({ empname, processName }) {
+  //*Show personal card information
   const [show, setShow] = useState(false);
   function showIcon(e) {
     e.preventDefault();
@@ -14,7 +15,7 @@ function Buyer({ empname, processName }) {
       setShow(true);
     }
   }
-
+  //* to get input name
   useEffect(() => {
     document
       .getElementById("actual-btn")
@@ -23,12 +24,10 @@ function Buyer({ empname, processName }) {
           event.target.files[0].name;
       });
   }, []);
-
-  function resetInput(){
-    document.getElementById("file-chosen").textContent = "Fayl seçilməyib"
-
+  //*resetting input
+  function resetInput() {
+    document.getElementById("file-chosen").textContent = "Fayl seçilməyib";
   }
-
 
   return (
     <BuyerWrapper>
@@ -92,7 +91,9 @@ function Buyer({ empname, processName }) {
           <img src={pdf} alt="icon" />
           <span id="file-chosen">Fayl seçilməyib</span>
         </div>
-        <button className="delete" onClick={resetInput}>Sil</button>
+        <button className="delete" onClick={resetInput}>
+          Sil
+        </button>
       </BuyerContainer>
     </BuyerWrapper>
   );
@@ -202,7 +203,6 @@ export const BuyerContainer = styled.div`
       padding: 0 10px;
       border-radius: 5px;
       cursor: pointer;
-
     }
 
     .fas {

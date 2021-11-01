@@ -143,7 +143,6 @@ function Area() {
   });
 
   const updateData = (timeline) => {
-
     dispatch(areaSelection(timeline));
     setSelection(timeline);
 

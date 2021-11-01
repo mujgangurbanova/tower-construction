@@ -243,7 +243,6 @@
   left: 4px;
 }
 
-
 //*Sidebar links
 .active-side {
   background-color: var(--hover);
@@ -292,24 +291,23 @@
   }
 }
 
-
 //*Area chart title
 .active-area {
   color: var(--main-color) !important;
   font-weight: bold;
 }
 input[type="date"]::-webkit-calendar-picker-indicator,
-input[type="date"]::-webkit-inner-spin-button{
-    opacity: 0;
+input[type="date"]::-webkit-inner-spin-button {
+  opacity: 0;
 }
 
-.far{
+.far {
   position: absolute;
   color: var(--secondary-color);
   top: 45px;
   right: 9px;
 }
 
-.apexcharts-legend{
+.apexcharts-legend {
   top: 50px !important;
 }

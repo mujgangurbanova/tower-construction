@@ -7,6 +7,7 @@ import Voucher from "./Voucher";
 import axios from "axios";
 
 function AddCustomer() {
+  //*state for input value
   const [empname, processName] = useState("");
   const [empcreditDuration, processCreditDuration] = useState("");
   const [empfirstPayment, processFirstPayment] = useState("");
@@ -29,9 +30,9 @@ function AddCustomer() {
       duration: empcreditDuration,
       chevron: "fas fa-chevron-down",
       button: "Bildiriş göndər",
-    }
-    
-    
+    };
+
+    //*Post method to add new customer
     const url = "http://localhost:8080/employees";
     axios.post(url, empInfo).then((res) => console.log(res));
     processName("");

@@ -12,31 +12,31 @@ import ResidenceGroup from "./ResidenceGroup";
 function Statistics() {
   return (
     <>
-    <Helmet>
-    <meta charSet="utf-8" />
+      <Helmet>
+        <meta charSet="utf-8" />
         <title>Statistika</title>
-    </Helmet>
-    <StatisticsWrapper>
-      <StatisticsContainer>
-        <Sales>
-          <SalesArea>
-            <Area />
-          </SalesArea>
-          <DonutTotal>
-            <DonutChart />
-          </DonutTotal>
-        </Sales>
-        <TopProjectSales>
-          <ResidenceWrapper>
-            <ResidenceContainer>
-              <h1 className="sales-increasing">Satışı artan layihələr</h1>
-              <ResidenceGroup />
-            </ResidenceContainer>
-          </ResidenceWrapper>
-          <Bar />
-        </TopProjectSales>
-      </StatisticsContainer>
-    </StatisticsWrapper>
+      </Helmet>
+      <StatisticsWrapper>
+        <StatisticsContainer>
+          <Sales>
+            <SalesArea>
+              <Area />
+            </SalesArea>
+            <DonutTotal>
+              <DonutChart />
+            </DonutTotal>
+          </Sales>
+          <TopProjectSales>
+            <ResidenceWrapper>
+              <ResidenceContainer>
+                <h1 className="sales-increasing">Satışı artan layihələr</h1>
+                <ResidenceGroup />
+              </ResidenceContainer>
+            </ResidenceWrapper>
+            <Bar />
+          </TopProjectSales>
+        </StatisticsContainer>
+      </StatisticsWrapper>
     </>
   );
 }
@@ -44,7 +44,7 @@ function Statistics() {
 export default Statistics;
 
 const StatisticsWrapper = styled(BuildingInformation)`
-  @media only screen and (max-width:85rem) {
+  @media only screen and (max-width: 85rem) {
     margin: 0 auto;
   }
 `;
@@ -63,8 +63,6 @@ const SalesArea = styled.div`
   width: 630px;
   height: 250px;
   margin-right: 20px;
-
-  
 `;
 
 const DonutTotal = styled.div`

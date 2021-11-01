@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 function AccordionContent({ empInfo, isOpen, setWhichOpen, which, openModal }) {
+  //* Functions to filter color
   const getPriorityColor = (status) => {
     if (status === "Gecikir")
       return { color: "#8068BF", backgroundColor: "#D0C9E2" };
@@ -11,11 +12,8 @@ function AccordionContent({ empInfo, isOpen, setWhichOpen, which, openModal }) {
     if (button === "Ödənilib")
       return {
         display: "none",
-
       };
   };
-
- 
 
   return (
     <CustomerGroup>
@@ -114,7 +112,6 @@ const CustomerDropdown = styled.div`
   height: ${({ isOpen }) => (isOpen ? "90px" : "0")};
   margin-top: ${({ isOpen }) => (isOpen ? "5px" : "0")};
   transform: ${({ isOpen }) => (isOpen ? "translateY(0)" : "translateY(-52%)")};
-
 `;
 
 const DropdownContainer = styled.div`
@@ -122,8 +119,6 @@ const DropdownContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 5px 20px;
-
-
 `;
 const Chevron = styled.i`
   transform: ${({ isOpen }) => (isOpen ? "rotate(180deg)" : "rotate(0deg)")};

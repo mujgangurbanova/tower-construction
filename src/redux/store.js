@@ -9,14 +9,14 @@ import donutChartDataReducer from "./reducers/donutChartDataReducer";
 import barChartDataReducer from "./reducers/barChartDataReducer";
 
 const persistConfig = {
-	key: "root",
-	storage,
+  key: "root",
+  storage,
 };
 const reducer = combineReducers({
-	cardDataReducer,
-	areaChartDataReducer,
-	donutChartDataReducer,
-	barChartDataReducer
+  cardDataReducer,
+  areaChartDataReducer,
+  donutChartDataReducer,
+  barChartDataReducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, reducer);
@@ -24,12 +24,12 @@ const persistedReducer = persistReducer(persistConfig, reducer);
 let store;
 
 if (process.env.NODE_ENV === "development") {
-	store = createStore(
-		persistedReducer,
-		composeWithDevTools(applyMiddleware(logger))
-	);
+  store = createStore(
+    persistedReducer,
+    composeWithDevTools(applyMiddleware(logger))
+  );
 } else {
-	store = createStore(persistedReducer);
+  store = createStore(persistedReducer);
 }
 
 let persistor = persistStore(store);

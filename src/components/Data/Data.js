@@ -41,8 +41,6 @@ export const BankInformation = [
   },
 ];
 
-
-
 export const Residences = [
   {
     img: buildingOne,

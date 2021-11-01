@@ -85,7 +85,5 @@ const Checked = styled.div`
 `;
 
 const DateInput = styled(Input)`
-position: relative;
-
-
-`
+  position: relative;
+`;

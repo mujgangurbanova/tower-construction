@@ -11,14 +11,14 @@ function Card() {
   const cardsList = useSelector((state) => state.cardDataReducer.data);
   const dispatch = useDispatch();
   const [selected, setSelected] = useState(undefined);
-
+  //*fetch card data...
   useEffect(() => {
     axios
       .get("/data.json")
       .then((res) => dispatch(cardData(res.data)))
       .catch((err) => console.log(err));
   }, [dispatch]);
-
+  //*funtion for filtering colors
   const getPriorityColor = (title) => {
     if (title === "Satılıb") return { color: "#5E44A2" };
     else if (title === "Kredit") return { color: "#FDA242" };
@@ -77,7 +77,7 @@ function Card() {
             <img src={search} alt="search-ground" />
           </Input>
           <Block>
-            <BlockContainer >
+            <BlockContainer>
               <Span
                 onClick={() => setFilter("blokA")}
                 isToggled={filter === "blokA"}
@@ -286,7 +286,7 @@ const Span = styled.button`
   background: ${({ isToggled }) =>
     isToggled ? "var(--main-color)" : "transparent"};
   padding: ${({ isToggled }) => (isToggled ? "6px 30px" : "")};
-  margin:  ${({ isToggled }) => (isToggled ? "" : "0 20px")};
+  margin: ${({ isToggled }) => (isToggled ? "" : "0 20px")};
   height: ${({ isToggled }) => (isToggled ? "50px" : "")};
   border-radius: ${({ isToggled }) => (isToggled ? "10px" : "0")};
   color: ${({ isToggled }) =>

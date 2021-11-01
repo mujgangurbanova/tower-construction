@@ -40,7 +40,7 @@ const DonutChart = () => {
             total: {
               show: true,
               label: "Ümumi",
-              
+
               fontSize: "12px",
               color: "#1E265E",
             },

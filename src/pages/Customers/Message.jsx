@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import Modal from "react-modal";
 import * as R from "ramda";
+
+//*Modal style
 const customStyles = {
   content: {
     top: "50%",
@@ -20,6 +22,7 @@ function Message({ modalIsOpen, setIsOpen }) {
   const [disabled, setDisabled] = useState(true);
   const [inputValue, setInputValue] = useState("");
 
+  //*To get input value and disable to send message if input is empty and empty space is not allowed.
   const handleChange = (e) => {
     setInputValue(e.target.value);
     let input = R.trim(e.target.value);
@@ -28,24 +31,22 @@ function Message({ modalIsOpen, setIsOpen }) {
     } else {
       setDisabled(true);
     }
-
   };
-  
+
+  //*Close modal
 
   function closeModal() {
     setIsOpen(false);
   }
-
+  //* After sending message modal close itself and reset input.
   function sent() {
-    if(inputValue){
+    if (inputValue) {
       setMessage(!message);
       setTimeout(() => {
         setMessage(message);
         closeModal();
-        setInputValue("")
-  
+        setInputValue("");
       }, 300);
-  
     }
   }
 
@@ -60,15 +61,17 @@ function Message({ modalIsOpen, setIsOpen }) {
       <MessageBox>
         <MessageBoxContainer>
           <Header>Mesajınız</Header>
-            <textarea
-              type="text"
-              spellCheck="false"
-              value={inputValue}
-              onChange={handleChange}
-            ></textarea>
+          <textarea
+            type="text"
+            spellCheck="false"
+            value={inputValue}
+            onChange={handleChange}
+          ></textarea>
 
           <ButtonGroup>
-            <Send onClick={sent} disabled={disabled}>Göndər </Send>
+            <Send onClick={sent} disabled={disabled}>
+              Göndər{" "}
+            </Send>
             <Close onClick={closeModal}>Bağla</Close>
           </ButtonGroup>
           <MessageSent message={message}>Mesaj uğurla göndərildi!</MessageSent>

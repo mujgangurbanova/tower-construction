@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { Input } from "./Buyer";
 import { Label } from "./Buyer";
 import { BuyerContainer } from "./Buyer";
@@ -9,9 +9,8 @@ import { InfoButton } from "./Buyer";
 import { PersonalCard } from "./Buyer";
 import sexsiyyet from "images/sexsiyyet.png";
 
-
-
 function Voucher() {
+  //*Show personal card information
   const [show, setShow] = useState(false);
   function showIcon(e) {
     e.preventDefault();
@@ -25,7 +24,7 @@ function Voucher() {
     <BuyerWrapper>
       <VoucherContainer>
         <Label htmlFor="buyer">Zamin</Label>
-        <Input autoComplete="off" id="buyer" type="text"  />
+        <Input autoComplete="off" id="buyer" type="text" />
       </VoucherContainer>
       <VoucherContainer>
         <Label htmlFor="phone">Telefon nömrəsi</Label> <br />
@@ -39,25 +38,23 @@ function Voucher() {
           </select>
           <i className="fas fa-chevron-down"></i>
 
-          <Input autoComplete="off" id="phone" type="number"  />
+          <Input autoComplete="off" id="phone" type="number" />
         </div>
       </VoucherContainer>
       <VoucherContainer>
         <Label htmlFor="code">ŞV-nin nömrəsi</Label>
-        <Input autoComplete="off"id="code" type="text" />
+        <Input autoComplete="off" id="code" type="text" />
       </VoucherContainer>
       <VoucherContainer>
-        <Label className="icon" htmlFor="card">Fin Kod
-        <InfoBtn onClick ={showIcon}>
-          <img className="info" src={info} alt="info" />
-        </InfoBtn>
-        <PersonalCardImage show ={show} src={sexsiyyet}/>
-        
-</Label>
+        <Label className="icon" htmlFor="card">
+          Fin Kod
+          <InfoBtn onClick={showIcon}>
+            <img className="info" src={info} alt="info" />
+          </InfoBtn>
+          <PersonalCardImage show={show} src={sexsiyyet} />
+        </Label>
         <Input autoComplete="off" id="card" type="text" />
       </VoucherContainer>
-      
-
     </BuyerWrapper>
   );
 }
@@ -65,22 +62,19 @@ function Voucher() {
 export default Voucher;
 
 const VoucherContainer = styled(BuyerContainer)`
-select{
-  border: 1px solid #fff;
-      border-radius: 5px;
-      padding: 0 10px;
-      position: relative;
-      cursor: pointer;
-      -webkit-appearance: none;
-      width: 70px;
-
-}
-
-
-`
+  select {
+    border: 1px solid #fff;
+    border-radius: 5px;
+    padding: 0 10px;
+    position: relative;
+    cursor: pointer;
+    -webkit-appearance: none;
+    width: 70px;
+  }
+`;
 
 const InfoBtn = styled(InfoButton)`
-bottom: 2px;
-`
+  bottom: 2px;
+`;
 
 const PersonalCardImage = styled(PersonalCard)``;

@@ -5,7 +5,7 @@ import Icon from "images/zoom-icon.png";
 
 function SketchFigure() {
   const [zoomIn, setZoomIn] = useState(false);
-
+//* zoom sketch image
   function enlarge() {
     if (zoomIn) {
       setZoomIn(false);

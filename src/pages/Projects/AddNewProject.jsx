@@ -1,26 +1,27 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import chevron from "images/chevron.png";
-import Backdrop from '@mui/material/Backdrop';
-import Box from '@mui/material/Box';
-import Modal from '@mui/material/Modal';
-import Fade from '@mui/material/Fade';
-import Typography from '@mui/material/Typography';
+import Backdrop from "@mui/material/Backdrop";
+import Box from "@mui/material/Box";
+import Modal from "@mui/material/Modal";
+import Fade from "@mui/material/Fade";
+import Typography from "@mui/material/Typography";
 
 const style = {
-  position: 'absolute',
-  top: '50%',
-  left: '50%',
-  transform: 'translate(-50%, -50%)',
+  //*modal styling
+  position: "absolute",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
   width: 400,
-  bgcolor: 'var(--background)',
-  border: '2px solid var(--main-color)',
+  bgcolor: "var(--background)",
+  border: "2px solid var(--main-color)",
   boxShadow: 24,
   p: 5,
 };
 
-
 function AddNewProject() {
+  //*Modal openning
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -42,33 +43,42 @@ function AddNewProject() {
             Yeni layihə
           </AddButton>
           <Modal
-        aria-labelledby="transition-modal-title"
-        aria-describedby="transition-modal-description"
-        open={open}
-        onClose={handleClose}
-        closeAfterTransition
-        BackdropComponent={Backdrop}
-        BackdropProps={{
-          timeout: 500,
-        }}
-      >
-        <Fade in={open}>
-          <Box sx={style}>
-            <Typography id="transition-modal-title" variant="h6" component="h2" >
-              Layihə tapılmadı.
-            </Typography>
-          </Box>
-        </Fade>
-      </Modal>
+            aria-labelledby="transition-modal-title"
+            aria-describedby="transition-modal-description"
+            open={open}
+            onClose={handleClose}
+            closeAfterTransition
+            BackdropComponent={Backdrop}
+            BackdropProps={{
+              timeout: 500,
+            }}
+          >
+            <Fade in={open}>
+              <Box sx={style}>
+                <Typography
+                  id="transition-modal-title"
+                  variant="h6"
+                  component="h2"
+                >
+                  Layihə tapılmadı.
+                </Typography>
+              </Box>
+            </Fade>
+          </Modal>
           <Complex>
             <div className="dropdown single">
               <div className="dropdown__content" onClick={openDrop}>
-                <div className="dropdown__content-selected">"Pearl" Kompleksi</div>
+                <div className="dropdown__content-selected">
+                  "Pearl" Kompleksi
+                </div>
                 <Chevron isOpen={isOpen}>
                   <img className="chevron" src={chevron} alt="Chevron down" />
                 </Chevron>
               </div>
-              <DropdownContainer className="dropdown__container" isOpen={isOpen}>
+              <DropdownContainer
+                className="dropdown__container"
+                isOpen={isOpen}
+              >
                 <ul>
                   <li></li>
                 </ul>

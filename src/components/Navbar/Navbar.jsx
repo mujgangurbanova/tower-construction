@@ -5,6 +5,7 @@ import { useLocation } from "react-router-dom";
 import ImageLogo from "images/logo-puple.png";
 import { SideBarData } from "components/Data/Data";
 const Navbar = ({ hamburger, setHamburger }) => {
+  //*When you click outside of sidebar it closes itself.
   const myRef = useRef();
   useEffect(() => {
     if (hamburger) {
@@ -30,10 +31,10 @@ const Navbar = ({ hamburger, setHamburger }) => {
 
   const location = useLocation();
 
-  //destructuring pathname from location
+  //*destructuring pathname from location
   const { pathname } = location;
 
-  // split method to get the name of the path in array
+  //* split method to get the name of the path in array
   const splitLocation = pathname.split("/");
 
   return (

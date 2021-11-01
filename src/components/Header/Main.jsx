@@ -1,4 +1,4 @@
-import React, {  useState } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import Search from "images/search-icon.png";
 import message from "images/message.png";
@@ -10,7 +10,8 @@ import { css } from "@emotion/react";
 import MenuItem from "@material-ui/core/MenuItem";
 import Menu from "@material-ui/core/Menu";
 
-const Main = ({hamburger, setHamburger}) => {
+const Main = ({ hamburger, setHamburger }) => {
+  //*Spinner for message and notification loading...
   const loading = useState(true);
   const [spinner, setSpinner] = useState(false);
   const [spinnerNot, setSpinnerNot] = useState(false);
@@ -43,9 +44,11 @@ const Main = ({hamburger, setHamburger}) => {
 
   return (
     <Header>
-
       <NavContainer>
-      <Hamburger hamburger ={hamburger} onClick={() => setHamburger(!hamburger)}>
+        <Hamburger
+          hamburger={hamburger}
+          onClick={() => setHamburger(!hamburger)}
+        >
           <span />
           <span />
           <span />
@@ -110,14 +113,14 @@ const Main = ({hamburger, setHamburger}) => {
           </Menu>
         </div>
       </NavContainer>
-<Overlay hamburger={hamburger}/>
+      <Overlay hamburger={hamburger} />
     </Header>
   );
 };
 
 export default Main;
 const Hamburger = styled.div`
-    display: ${({ hamburger }) => (hamburger ? "none" : "flex")};
+  display: ${({ hamburger }) => (hamburger ? "none" : "flex")};
   flex-direction: column;
   cursor: pointer;
   span {
@@ -130,9 +133,9 @@ const Hamburger = styled.div`
     width: 14px;
     transition: width 0.15s ease-in-out 0s;
   }
- @media only screen and (min-width:85rem){
-   display: none;
- }
+  @media only screen and (min-width: 85rem) {
+    display: none;
+  }
 `;
 
 export const Header = styled.div`
@@ -205,19 +208,15 @@ const Input = styled.input`
   box-sizing: border-box;
   filter: drop-shadow(1px 2px 8px rgba(0, 0, 0, 0.25));
   border-radius: 0.3125rem;
-
-  
 `;
 
-
 export const Overlay = styled.label`
-@media only screen and (min-width:64rem) and (max-width:85rem){
-  position: ${({ hamburger }) => (hamburger ? "fixed" : "initial")};
-  inset: ${({ hamburger }) => (hamburger ? "0" : "")};
-  transition:  ${({ hamburger }) => (hamburger ? "opacity 0.3s ease 0s" : "")};
-  opacity:  ${({ hamburger }) => (hamburger ? "1" : "")};
-  pointer-events: auto;
-  background: var(--overlay);
-
-}
+  @media only screen and (min-width: 64rem) and (max-width: 85rem) {
+    position: ${({ hamburger }) => (hamburger ? "fixed" : "initial")};
+    inset: ${({ hamburger }) => (hamburger ? "0" : "")};
+    transition: ${({ hamburger }) => (hamburger ? "opacity 0.3s ease 0s" : "")};
+    opacity: ${({ hamburger }) => (hamburger ? "1" : "")};
+    pointer-events: auto;
+    background: var(--overlay);
+  }
 `;
