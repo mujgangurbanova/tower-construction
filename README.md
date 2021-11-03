@@ -1,9 +1,4 @@
--Responsive for tablet and desktop.
-- Used front-end libraries: such as Material UI, Apex JS(for charts).
--Splitted each part into components and maximized component reuse.
--Used styled-components for styling.
--Used json-server for adding customers information to the list. 
--Data populated by making axios calls. Data was stored in the frontend redux store.
+
 
 ## Available Scripts
 
