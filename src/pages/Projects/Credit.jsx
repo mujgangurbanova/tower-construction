@@ -56,7 +56,7 @@ function Credit({
           id="buyer"
           type="date"
           value={emplastPayment}
-          onChange={(obj) => processlastPayment(obj.target.value)}
+          onChange={(obj) => processlastPayment(obj.target.valu)}
         />
         <i className="far fa-calendar"></i>
       </BuyerContainer>
