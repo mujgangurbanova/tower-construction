@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useRef, useState } from "react";
-function Donut() {
+function DonutChart() {
   const containerRef = useRef(null);
   const [label, setLabel] = useState("Kredit");
   const [statistics, setStatistics] = useState(undefined);
@@ -96,4 +96,4 @@ function Donut() {
   );
 }
 
-export default Donut;
+export default DonutChart;
