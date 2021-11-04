@@ -31,7 +31,7 @@ function DonutChart() {
       a3 = (a3 / total) * 100;
 
       // "donut": [2302, 1132, 1090],
-      // "label" :["Kredit", "Ipoteka", "Satilib"],
+      // "label" :["Kredit", "Ipoteka", "Satilib"]
       const [a1Label, a2Label, a3Label] = data.label;
 
       const displayOptions = [
