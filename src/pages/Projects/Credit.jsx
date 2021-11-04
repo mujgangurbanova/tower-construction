@@ -14,6 +14,7 @@ function Credit({
   processMonthPayment,
   emplastPayment,
   processlastPayment,
+  empname,
   save,
 }) {
   return (
@@ -69,7 +70,17 @@ function Credit({
         </Checked>
       </div>
 
-      <button onClick={save} className="add-customers">
+      <button
+        onClick={save}
+        disabled={
+          empcreditDuration === "" ||
+          empfirstPayment === "" ||
+          empmonthPayment === "" ||
+          emplastPayment === "" ||
+          empname === ""
+        }
+        className="add-customers"
+      >
         Alıcını əlavə et
       </button>
     </BuyerWrapper>

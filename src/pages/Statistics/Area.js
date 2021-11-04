@@ -21,7 +21,7 @@ function Titles({ selection, setSelection, updateData }) {
           onClick={() => updateData("six_months")}
           className={selection === "six_months" ? "active-area" : ""}
         >
-          Son 8 həftə
+          Son 6 həftə
         </button>
         <button
           id="one-month"

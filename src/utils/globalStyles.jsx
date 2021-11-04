@@ -50,6 +50,12 @@ input::-webkit-inner-spin-button {
     --outline:#48cae4;
     --overlay: rgba(0, 0, 0, 0.6);
     --disabled:#E3DCF4;
+    --pi: 3.14159265359;
+    --a1: 0;
+    --a2: 0;
+    --a3: 0;
+    --a4: 0;
+
 
 
 }

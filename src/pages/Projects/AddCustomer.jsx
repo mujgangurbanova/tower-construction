@@ -52,6 +52,7 @@ function AddCustomer() {
           <LineBottom />
           <Credit
             empcreditDuration={empcreditDuration}
+            empname={empname}
             processCreditDuration={processCreditDuration}
             empfirstPayment={empfirstPayment}
             processFirstPayment={processFirstPayment}

@@ -5,7 +5,6 @@ import logger from "redux-logger";
 import storage from "redux-persist/lib/storage";
 import cardDataReducer from "./reducers/cardDataReducer";
 import areaChartDataReducer from "./reducers/areaChartDataReducer";
-import donutChartDataReducer from "./reducers/donutChartDataReducer";
 import barChartDataReducer from "./reducers/barChartDataReducer";
 
 const persistConfig = {
@@ -15,7 +14,6 @@ const persistConfig = {
 const reducer = combineReducers({
   cardDataReducer,
   areaChartDataReducer,
-  donutChartDataReducer,
   barChartDataReducer,
 });
 

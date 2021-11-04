@@ -69,7 +69,9 @@ const DonutTotal = styled.div`
   background-color: var(--white);
   border-radius: 10px;
   height: 250px;
-  width: 300px;
+  width: 100%;
+  max-width: 300px;
+  /* width: 300px; */
   display: flex;
   align-items: center;
 `;
