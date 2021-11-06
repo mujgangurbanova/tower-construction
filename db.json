@@ -20,7 +20,7 @@
   "employees": [
     {
       "customer": "Müjgan Qurbanova",
-      "building": "20",
+      "building": "19",
       "cost": "40.000 AZN",
       "status": "Ödənilib",
       "lastdate": "Son ödəmə tarixi",
@@ -85,6 +85,23 @@
       "chevron": "fas fa-chevron-down",
       "button": "Bildiriş göndər",
       "id": 5
+    },
+    {
+      "customer": "Ali ALiyev",
+      "building": "12",
+      "cost": "80.000 AZN",
+      "status": "Gecikir",
+      "lastdate": "Son ödəmə tarixi",
+      "lastpayment": "2021-12-12",
+      "first_payment": "İlkin ödəniş",
+      "firspayment": "10.000 AZN",
+      "month_payment": "Aylıq ödəniş",
+      "monthlypayment": "1000 AZN",
+      "duration_status": "Müddəti",
+      "duration": "Gecikir",
+      "chevron": "fas fa-chevron-down",
+      "button": "Bildiriş göndər",
+      "id": 6
     }
   ]
 }

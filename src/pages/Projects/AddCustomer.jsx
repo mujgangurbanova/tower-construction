@@ -17,9 +17,9 @@ function AddCustomer() {
   const save = () => {
     let empInfo = {
       customer: empname,
-      building: "17",
-      cost: "70.000 AZN",
-      status: "Ödənilib",
+      building: "12",
+      cost: "80.000 AZN",
+      status: "Gecikir",
       lastdate: "Son ödəmə tarixi",
       lastpayment: emplastPayment,
       first_payment: "İlkin ödəniş",
