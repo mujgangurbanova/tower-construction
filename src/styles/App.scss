@@ -311,11 +311,11 @@ input[type="date"]::-webkit-inner-spin-button {
 .apexcharts-legend {
   top: 50px !important;
 }
-//* Donut Chart 
+//* Donut Chart
 
 .donut-container {
-  width: 300px;
-  height: 300px;
+  width: 200px;
+  height: 200px;
   position: relative;
 }
 
@@ -337,29 +337,22 @@ input[type="date"]::-webkit-inner-spin-button {
 
 @keyframes percent1 {
   to {
-    stroke-dasharray: calc(2 * var(--pi) * 75 * var(--a1) / 100)
-      calc(2 * var(--pi) * 75 * calc(1 - var(--a1) / 100));
+    stroke-dasharray: calc(2 * var(--pi) * 55 * var(--a1) / 100)
+      calc(2 * var(--pi) * 55 * calc(1 - var(--a1) / 100));
   }
 }
 
 @keyframes percent2 {
   to {
-    stroke-dasharray: calc(2 * var(--pi) * 75 * var(--a2) / 100)
-      calc(2 * var(--pi) * 75 * calc(1 - var(--a2) / 100));
+    stroke-dasharray: calc(2 * var(--pi) * 55 * var(--a2) / 100)
+      calc(2 * var(--pi) * 55 * calc(1 - var(--a2) / 100));
   }
 }
 
 @keyframes percent3 {
   to {
-    stroke-dasharray: calc(2 * var(--pi) * 75 * var(--a3) / 100)
-      calc(2 * var(--pi) * 75 * calc(1 - var(--a3) / 100));
-  }
-}
-
-@keyframes percent4 {
-  to {
-    stroke-dasharray: calc(2 * var(--pi) * 75 * var(--a4) / 100)
-      calc(2 * var(--pi) * 75 * calc(1 - var(--a4) / 100));
+    stroke-dasharray: calc(2 * var(--pi) * 55 * var(--a3) / 100)
+      calc(2 * var(--pi) * 55 * calc(1 - var(--a3) / 100));
   }
 }
 
@@ -388,21 +381,41 @@ input[type="date"]::-webkit-inner-spin-button {
 }
 
 .donut:first-child:hover {
-  stroke-width: 60;
-  opacity: 0.7;
-}
-
-.donut:nth-child(2):hover {
-  stroke-width: 55;
-  opacity: 0.7;
-}
-
-.donut:nth-child(3):hover {
   stroke-width: 50;
   opacity: 0.7;
 }
 
-.donut:nth-child(4):hover {
+.donut:nth-child(2):hover {
+  stroke-width: 45;
+  opacity: 0.7;
+}
+
+.donut:nth-child(3):hover {
   stroke-width: 40;
   opacity: 0.7;
+}
+
+.right-donut {
+  div {
+    display: flex;
+    align-items: center;
+    margin: 15px 5px 25px 0;
+  }
+  .round {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin-right: 10px;
+
+  }
+  .round-one{
+    background-color: #5d44a2;
+  }
+  .round-two{
+    background-color: #B6A4E5;
+  }
+  .round-three{
+    background-color: #E2DBF6;
+  }
+
 }

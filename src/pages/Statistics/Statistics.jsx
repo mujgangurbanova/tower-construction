@@ -72,8 +72,9 @@ const DonutTotal = styled.div`
   width: 100%;
   max-width: 300px;
   /* width: 300px; */
-  display: flex;
+  display: grid;
   align-items: center;
+  grid-template-columns: 200px 1fr;
 `;
 
 const TopProjectSales = styled.div`
