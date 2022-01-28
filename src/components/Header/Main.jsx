@@ -22,6 +22,7 @@ const Main = ({ hamburger, setHamburger }) => {
   };
 
   const handleClose = () => {
+
     setAnchorEl(null);
   };
 
@@ -97,12 +98,12 @@ const Main = ({ hamburger, setHamburger }) => {
             id="menu-appbar"
             anchorEl={anchorEl}
             anchorOrigin={{
-              vertical: "bottom",
+              vertical: "top",
               horizontal: "right",
             }}
             keepMounted
             transformOrigin={{
-              vertical: "bottom",
+              vertical: "top",
               horizontal: "right",
             }}
             open={open}
@@ -124,26 +125,21 @@ const Hamburger = styled.div`
   flex-direction: column;
   cursor: pointer;
   span {
-    width: 20px;
-    height: 2px;
+    width: 2rem;
+    height: .2rem;
     background: var(--main-color);
-    margin-bottom: 6px;
+    margin-bottom: .6rem;
   }
   span:nth-child(3) {
-    width: 14px;
+    width: 1.4rem;
     transition: width 0.15s ease-in-out 0s;
   }
-  @media only screen and (min-width: 85rem) {
+  @media only screen and (min-width: 1360px) {
     display: none;
   }
 `;
 
 export const Header = styled.div`
-  background: var(--white);
-  position: sticky;
-  top: 0;
-  height: 7.5rem;
-  z-index: 999;
 `;
 
 const NavContainer = styled.div`
@@ -153,7 +149,7 @@ const NavContainer = styled.div`
   justify-content: space-around;
   .search {
     position: absolute;
-    margin-left: 10px;
+    margin-left: 1rem;
   }
 
   .input-bar {
@@ -173,22 +169,24 @@ const NavContainer = styled.div`
       cursor: pointer;
     }
     .msg {
-      margin-right: 20px;
+      margin-right: 2rem;
     }
 
     .group {
       position: absolute;
-      top: 0.66rem;
+      top: 1.056rem;
     }
 
     .notification {
-      margin-right: 20px;
+      margin-right: 2rem;
       cursor: pointer;
       position: relative;
     }
 
     .person-name {
-      margin-right: 1rem;
+      margin-right: 1.6rem;
+      font-size: 1.6rem;
+
     }
   }
   .icon-button {
@@ -201,17 +199,17 @@ const NavContainer = styled.div`
 
 const Input = styled.input`
   position: relative;
-  text-indent: 3rem;
-  width: 27rem;
-  height: 2.5rem;
+  text-indent: 4.8rem;
+  width: 43.2rem;
+  height: 4rem;
   border: 1px solid var(--border-color);
   box-sizing: border-box;
   filter: drop-shadow(1px 2px 8px rgba(0, 0, 0, 0.25));
-  border-radius: 0.3125rem;
+  border-radius: 0.5rem;
 `;
 
 export const Overlay = styled.label`
-  @media only screen and (min-width: 64rem) and (max-width: 85rem) {
+  @media only screen and (min-width: 1024px) and (max-width: 1360px) {
     position: ${({ hamburger }) => (hamburger ? "fixed" : "initial")};
     inset: ${({ hamburger }) => (hamburger ? "0" : "")};
     transition: ${({ hamburger }) => (hamburger ? "opacity 0.3s ease 0s" : "")};

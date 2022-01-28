@@ -64,13 +64,21 @@ input::-webkit-inner-spin-button {
     padding: 0;
     scroll-behavior: smooth;
     box-sizing: border-box;
-    outline: 0;
     font-family: 'DM Sans', sans-serif;
+    outline: 0;
   }
 
 
 body{
   overflow-x: hidden;
+}
+
+li{
+  list-style-type: none;
+}
+
+a{
+  text-decoration: none;
 }
 
 *,
@@ -81,7 +89,7 @@ body{
 }
 
 html {
-    font-size: 16px;
+    font-size: 10px;
 }
 
 

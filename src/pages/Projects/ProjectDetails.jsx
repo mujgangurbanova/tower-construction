@@ -17,9 +17,9 @@ function ProjectDetails() {
 export default ProjectDetails;
 
 const ProjectDetWrapper = styled.div`
-  margin-top: 1.25rem;
+  margin-top: 2rem;
   background-color: var(--background);
 `;
 const ProjectDetContainer = styled.div`
-  padding: 1.25rem 1.875rem;
+  padding: 2rem 3rem;
 `;

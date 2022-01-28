@@ -44,7 +44,7 @@ function Statistics() {
 export default Statistics;
 
 const StatisticsWrapper = styled(BuildingInformation)`
-  @media only screen and (max-width: 85rem) {
+  @media only screen and (max-width: 136rem) {
     margin: 0 auto;
   }
 `;
@@ -54,27 +54,26 @@ const StatisticsContainer = styled(BuildingInformationContainer)``;
 const Sales = styled.div`
   display: flex;
   align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: 2rem;
 `;
 
 const SalesArea = styled.div`
   background: var(--white);
-  border-radius: 10px;
-  width: 630px;
-  height: 250px;
-  margin-right: 20px;
+  border-radius: 1rem;
+  width: 63rem;
+  height: 25rem;
+  margin-right: 2rem;
 `;
 
 const DonutTotal = styled.div`
   background-color: var(--white);
-  border-radius: 10px;
-  height: 250px;
+  border-radius: 1rem;
+  height: 25rem;
   width: 100%;
-  max-width: 300px;
-  /* width: 300px; */
+  max-width: 30rem;
   display: grid;
   align-items: center;
-  grid-template-columns: 200px 1fr;
+  grid-template-columns: 20rem 1fr;
 `;
 
 const TopProjectSales = styled.div`
@@ -84,18 +83,18 @@ const TopProjectSales = styled.div`
 
 const ResidenceWrapper = styled.div`
   background: var(--white);
-  border-radius: 10px;
-  margin-right: 20px;
+  border-radius: 1rem;
+  margin-right: 2rem;
 
-  width: 630px;
-  height: 250px;
+  width: 63rem;
+  height: 25rem;
 `;
 
 const ResidenceContainer = styled.div`
-  padding: 30px 20px;
+  padding: 3rem 2rem;
   .sales-increasing {
     color: var(--secondary-color);
-    font-size: 1rem;
+    font-size: 1.6rem;
     font-weight: 500;
   }
 `;

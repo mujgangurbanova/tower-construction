@@ -84,58 +84,58 @@ function Message({ modalIsOpen, setIsOpen }) {
 export default Message;
 
 const MessageBox = styled.div`
-  width: 300px;
-  height: 270px;
+  width: 30rem;
+  height: 27rem;
   background: var(--white);
-  box-shadow: 0px 6px 19px -4px rgba(0, 0, 0, 0.13);
-  border-radius: 20px;
+  box-shadow: 0rem .6rem 1.9rem -.4rem rgba(0, 0, 0, 0.13);
+  border-radius: 2rem;
 `;
 
 const MessageBoxContainer = styled.div`
-  padding: 20px;
+  padding: 2rem;
 
   textarea {
     border: 1px solid var(--text-area);
     background: var(--background);
     color: var(--secondary-color);
-    width: 250px;
-    height: 130px;
+    width: 25rem;
+    height: 13rem;
     resize: none;
-    padding: 10px;
-    outline: 1px solid var(--outline);
+    padding: 1rem;
+    outline: .1rem solid var(--outline);
   }
 `;
 
 const MessageSent = styled.p`
-  font-size: 12px;
+  font-size: 1.2rem;
   color: red;
-  margin-left: 10px;
+  margin-left: 1rem;
   display: ${({ message }) => (message ? "block" : "none")};
 `;
 
 const Header = styled.h1`
-  font-size: 1rem;
+  font-size: 1.6rem;
   color: var(--main-color);
   font-weight: 500;
-  margin-bottom: 10px;
+  margin-bottom: 1rem;
 `;
 
 const ButtonGroup = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px;
+  padding: 1rem;
 `;
 
 const Send = styled.button`
-  width: 147px;
+  width: 14.7rem;
   cursor: pointer;
-  height: 33px;
+  height: 3.3rem;
   background: var(--main-color);
-  border: 1px solid var(--main-color);
+  border: .1rem solid var(--main-color);
   color: var(--white);
-  border-radius: 5px;
-  font-size: 12px;
+  border-radius: .5rem;
+  font-size: 1.2rem;
 `;
 
 const Close = styled.button`
@@ -144,6 +144,6 @@ const Close = styled.button`
   background: transparent;
   border: none;
   color: var(--main-color);
-  font-size: 12px;
+  font-size: 1.2rem;
   font-weight: 500;
 `;

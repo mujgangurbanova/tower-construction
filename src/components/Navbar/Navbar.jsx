@@ -58,33 +58,33 @@ const Navbar = ({ hamburger, setHamburger }) => {
 
 export default Navbar;
 const BrandName = styled.h1`
-  margin-left: 1.25rem;
+  margin-left: 2rem;
   font-family: inherit;
-  font-size: 1.575rem;
+  font-size: 2.5rem;
   width: 50%;
-  margin-top: 1.5625rem;
+  margin-top: 2.5rem;
   line-height: 1;
   color: var(--main-color);
 `;
 
 const Logo = styled.img`
-  height: 4.8125rem;
+  height: 7.7rem;
 `;
 
 const Navigation = styled.div`
   height: 100%;
   position: sticky;
-  top: 0.5rem;
+  top: 0.8rem;
   background: var(--white);
 
   .brand-name {
     display: flex;
     align-items: center;
-    padding: 0 47px;
-    margin-bottom: 90px;
+    padding: 0 4.7rem;
+    margin-bottom: 9rem;
   }
 
-  @media only screen and (min-width: 64rem) and (max-width:85rem) {
+  @media only screen and (min-width: 1024px) and (max-width:1360px) {
     display: ${({ hamburger }) => (hamburger ? "block" : "none")};
     z-index: ${({ hamburger }) => (hamburger ? "99999" : "-1")};
     top: ${({ hamburger }) => (hamburger ? "0" : "")};
@@ -94,25 +94,25 @@ const Navigation = styled.div`
 `;
 
 const NavLinks = styled.div`
-  padding: 0rem 4.25rem 0 4.25rem;
+  padding: 0rem 6.8rem 0 6.8rem;
 `;
 
 const NavLists = styled.div`
   display: flex;
   align-items: center;
-  padding: 20px;
+  padding: 2rem;
   transition: 0.3s all;
-  @media only screen and (min-width: 64rem) and (max-width:85rem) {
-    width: 200px;
+  @media only screen and (min-width: 1024px) and (max-width:1360px) {
+    width: 20rem;
   }  
 
   svg {
-    margin-right: 1rem;
+    margin-right: 1.6rem;
   }
 
   a {
     color: var(--secondary-color);
-    font-size: 1.2rem;
+    font-size: 1.92rem;
     text-align: center;
     text-decoration: none;
 

@@ -36,24 +36,22 @@ export const BuildingInformation = styled.section``;
 
 const SketchContainer = styled.div`
   display: flex;
-  padding: 1.25rem 0;
+  padding: 2rem 0;
   justify-content: space-between;
 
-  @media only screen and (max-width: 64rem) {
-    /* flex-wrap: wrap; */
-  }
+  
 `;
 
 export const BuildingInformationContainer = styled.div`
-  padding: 1.25rem 1.875rem;
+  padding: 2rem 3rem;
   background-color: var(--background);
-  margin-top: 10px;
+  margin-top: 1rem;
 
   .building-title {
     color: var(--main-color);
 
-    font-size: 1.25rem;
+    font-size: 2rem;
     width: fit-content;
-    margin-left: 6px;
+    margin-left: .6rem;
   }
 `;

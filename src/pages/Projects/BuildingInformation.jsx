@@ -75,24 +75,26 @@ const Building = styled.div`
 
 const BuildingStatus = styled.div`
   background-color: var(--white);
-  width: 300px;
-  height: 75px;
-  border-radius: 10px;
+  width: 30rem;
+  height: 7.5rem;
+  border-radius: 1rem,;
 
   .building-status {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 10px;
+    padding: 1rem;
   }
 
   .on-sale {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    padding: 0 15px;
+    padding: 0 1.5rem;
 
     p {
+      font-size: 1.6rem;
+
       &:nth-child(1) {
         flex: 1;
       }
@@ -114,37 +116,43 @@ const Status = styled.div`
   align-items: center;
 
   img {
-    margin-right: 5px;
+    margin-right: .5rem;
   }
 
   span {
     color: var(--main-color);
+    font-size: 1.6rem;
+
   }
 `;
 
 const HomeStatus = styled.div`
-  width: 300px;
-  height: 240px;
+  width: 30rem;
+  height: 24rem;
   background-color: var(--white);
-  border-radius: 10px;
-  margin-top: 1rem;
+  border-radius: 1rem;
+  margin-top: 1.6rem;
 
   .header {
     font-weight: 900;
+    font-size: 1.6rem;
+
     color: var(--secondary-color);
   }
 
   .text {
     color: var(--secondary-color);
+    font-size: 1.6rem;
+
   }
 
   .home-status{
-      padding: 8px 20px;
+      padding: .8rem 2rem;
   }
 `;
 
  export const Line = styled.div`
-height: 1px;
+height: .1rem;
 width: 100%;
 background-color: var(--line);
 `

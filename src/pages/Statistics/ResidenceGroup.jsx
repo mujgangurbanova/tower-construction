@@ -26,22 +26,22 @@ const ResidenceGroupContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 0;
+  padding: 1rem 0;
 `;
 
 const ResidenceCard = styled.div`
-  width: 105px;
+  width: 10.5rem;
   img {
-    border-radius: 10px;
+    border-radius: 1rem;
   }
 
   p {
-    font-size: 14px;
+    font-size: 1.4rem;
     color: var(--secondary-color);
     font-weight: 500;
   }
 
   span {
-    font-size: 10px;
+    font-size: 1rem;
   }
 `;

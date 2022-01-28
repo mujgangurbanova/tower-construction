@@ -23,30 +23,34 @@ export default Banks;
 const Mortgage = styled.div``;
 
 const MortgageContainer = styled.div`
-  width: 290px;
-  height: 330px;
-  border-radius: 10px;
+  width: 29rem;
+  height: 33rem;
+  border-radius: 1rem;
   background-color: var(--white);
-  padding: 15px;
+  padding: 1.5rem;
 
   .bank-group {
     display: flex;
     align-items: center;
-    padding: 5px 10px;
+    padding: .5rem 1rem;
 
     img {
-      margin-right: 10px;
-      width: 27px;
+      margin-right: 1rem;
+      width: 2.7rem;
     }
     span {
       text-align: left;
       color: var(--secondary-color);
-      width: 90px;
+      width: 9rem;
+      font-size: 1.6rem;
+
     }
   }
 
   .mortgage-title {
-    margin-bottom: 1.25rem;
+    margin-bottom: 2rem;
     color: var(--main-color);
+    font-size: 1.6rem;
+
   }
 `;

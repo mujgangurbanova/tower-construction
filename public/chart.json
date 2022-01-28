@@ -1,6 +1,6 @@
 
 {
-        "a": [
+        "areaChart__sales__data": [
           [1327359600000, 30.95],
           [1327446000000, 31.34],
           [1327532400000, 31.18],
@@ -279,9 +279,9 @@
         ],
 
       
-      "donut": [2302, 1132, 1090],
-      "label" :["Kredit", "Ipoteka", "Satilib"],
-      "bar": [600, 550, 450, 350, 250, 200, 150],
-      "labels":["B.e", "Ç.a", "Ç.", "C.a", "C.", "Ş.", "B."]
+      "donutChartdata": [2302, 1132, 1090],
+      "donutChartlabel" :["Kredit", "Ipoteka", "Satilib"],
+      "barChartdata": [600, 550, 450, 350, 250, 200, 150],
+      "xaxislabels":["B.e", "Ç.a", "Ç.", "C.a", "C.", "Ş.", "B."]
 
 }

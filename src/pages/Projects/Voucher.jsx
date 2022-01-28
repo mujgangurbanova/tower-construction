@@ -63,18 +63,18 @@ export default Voucher;
 
 const VoucherContainer = styled(BuyerContainer)`
   select {
-    border: 1px solid #fff;
-    border-radius: 5px;
-    padding: 0 10px;
+    border: 0.1rem solid #fff;
+    border-radius: 0.5rem;
+    padding: 0 1rem;
     position: relative;
     cursor: pointer;
     -webkit-appearance: none;
-    width: 70px;
+    width: 7rem;
   }
 `;
 
 const InfoBtn = styled(InfoButton)`
-  bottom: 2px;
+  bottom: 0.2rem;
 `;
 
 const PersonalCardImage = styled(PersonalCard)``;

@@ -5,18 +5,7 @@ import { BuyerContainer } from "./Buyer";
 import { BuyerWrapper } from "./Buyer";
 import styled from "styled-components";
 
-function Credit({
-  empcreditDuration,
-  processCreditDuration,
-  empfirstPayment,
-  processFirstPayment,
-  empmonthPayment,
-  processMonthPayment,
-  emplastPayment,
-  processlastPayment,
-  empname,
-  save,
-}) {
+function Credit({ form, setState, save }) {
   return (
     <BuyerWrapper>
       <BuyerContainer>
@@ -25,8 +14,10 @@ function Credit({
           autoComplete="off"
           id="buyer"
           type="text"
-          value={empcreditDuration}
-          onChange={(obj) => processCreditDuration(obj.target.value)}
+          value={form.empcreditDuration}
+          onChange={(e) => {
+            setState({ ...form, empcreditDuration: e.target.value });
+          }}
         />
       </BuyerContainer>
       <BuyerContainer>
@@ -35,8 +26,10 @@ function Credit({
           autoComplete="off"
           id="buyer"
           type="text"
-          value={empfirstPayment}
-          onChange={(obj) => processFirstPayment(obj.target.value)}
+          value={form.empfirstPayment}
+          onChange={(e) => {
+            setState({...form, empfirstPayment: e.target.value });
+          }}
         />
       </BuyerContainer>
       <BuyerContainer>
@@ -45,8 +38,10 @@ function Credit({
           autoComplete="off"
           id="buyer"
           type="text"
-          value={empmonthPayment}
-          onChange={(obj) => processMonthPayment(obj.target.value)}
+          value={form.empmonthPayment}
+          onChange={(e) => {
+            setState({ ...form, empmonthPayment: e.target.value });
+          }}
         />
       </BuyerContainer>
       <BuyerContainer>
@@ -55,8 +50,10 @@ function Credit({
           autoComplete="off"
           id="buyer"
           type="date"
-          value={emplastPayment}
-          onChange={(obj) => processlastPayment(obj.target.value)}
+          value={form.emplastPayment}
+          onChange={(e) => {
+            setState({ ...form, emplastPayment: e.target.value });
+          }}
         />
         <i className="far fa-calendar"></i>
       </BuyerContainer>
@@ -73,11 +70,11 @@ function Credit({
       <button
         onClick={save}
         disabled={
-          empcreditDuration === "" ||
-          empfirstPayment === "" ||
-          empmonthPayment === "" ||
-          emplastPayment === "" ||
-          empname === ""
+          form.empcreditDuration === "" ||
+          form.empfirstPayment === "" ||
+          form.empmonthPayment === "" ||
+          form.emplastPayment === "" ||
+          form.empname === ""
         }
         className="add-customers"
       >

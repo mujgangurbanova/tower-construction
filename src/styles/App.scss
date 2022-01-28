@@ -34,34 +34,39 @@
 
 .chart-wrapper {
   background-color: var(--white);
-  border-radius: 10px;
-  height: 250px;
-  width: 300px;
+  border-radius: 1rem;
+  height: 25rem;
+  width: 30rem;
 }
 
 #chart {
   height: 100%;
-  padding: 10px;
+  padding: 1rem;
   width: 100%;
 }
 
 .title {
   columns: 2;
-  margin: 0 40px;
+  margin: 0 4rem;
   h1 {
     color: var(--secondary-color);
     column-span: all;
-    font-size: 18px;
+    font-size: 1.8rem;
     font-weight: 500;
-    margin-bottom: 10px;
+    margin-bottom: 1rem;
   }
 
-  a {
-    color: var(--secondary-color);
-    text-decoration: none;
+  div{
+    display: flex;
+  }
 
+  button {
+    color: var(--secondary-color);
+    border: none;
+    background: transparent;
+    font-size: 1.6rem;
     &:not(:last-child) {
-      margin-right: 1.25rem;
+      margin-right: 2rem;
     }
   }
 }
@@ -72,11 +77,11 @@
 
 //* App wrapper
 .wrapper {
-  max-width: 87.5rem;
+  max-width: 140rem;
   margin: 0 auto;
 }
 
-.container {
+.app-container {
   display: flex;
   flex-direction: row;
 }
@@ -94,10 +99,10 @@
 }
 
 .add-customers {
-  height: 43px;
+  height: 4.3rem;
   background: var(--orange);
-  border: 1px solid var(--orange);
-  border-radius: 10px;
+  border: .1rem solid var(--orange);
+  border-radius: 1rem;
   color: var(--white);
   cursor: pointer;
 }
@@ -105,9 +110,9 @@
 .check-label {
   display: block;
   position: relative;
-  padding-left: 35px;
+  padding-left: 3.5rem;
   cursor: pointer;
-  font-size: 22px;
+  font-size: 2.2rem;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -128,8 +133,8 @@
   position: absolute;
   top: 0;
   left: 0;
-  height: 25px;
-  width: 25px;
+  height: 2.5rem;
+  width: 2.5rem;
   background-color: var(--orange);
 }
 
@@ -152,12 +157,12 @@
 }
 
 .check-label .checkmark:after {
-  left: 10px;
-  top: 7px;
-  width: 5px;
-  height: 10px;
+  left: 1rem;
+  top: .7rem;
+  width: .5rem;
+  height: 1rem;
   border: solid white;
-  border-width: 0 3px 3px 0;
+  border-width: 0 .3rem .3rem 0;
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
@@ -175,9 +180,9 @@
 ::-webkit-file-upload-button {
   color: var(--white);
   background: var(--main-color);
-  border: 1px solid var(--main-color);
-  border-radius: 30px;
-  padding: 2px;
+  border: .1rem solid var(--main-color);
+  border-radius: 3rem;
+  padding: .2rem;
 }
 
 //*Loading..
@@ -194,16 +199,16 @@
 
 .spinner {
   position: absolute;
-  top: 60px;
+  top: 6rem;
   display: none;
 
   .arrow_box {
     position: relative;
     background: var(--white);
-    border: 4px solid var(--white);
-    height: 30px;
+    border: .4rem solid var(--white);
+    height: 3rem;
     box-shadow: var(--box-shadow);
-    border-radius: 5px;
+    border-radius: .5rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -222,8 +227,8 @@
     &:after {
       border-color: rgba(255, 255, 255, 0);
       border-bottom-color: var(--white);
-      border-width: 30px;
-      margin-left: -30px;
+      border-width: 3rem;
+      margin-left: -3rem;
     }
     &:before {
       border-color: rgba(255, 255, 255, 0);
@@ -237,16 +242,16 @@
 }
 
 .spinner.message-spinner {
-  left: -41px;
+  left: -4.1rem;
 }
 .spinner.notification-spinner {
-  left: 4px;
+  left: .4rem;
 }
 
 //*Sidebar links
 .active-side {
   background-color: var(--hover);
-  border-radius: 30px;
+  border-radius: 3rem;
   color: var(--main-color);
 }
 
@@ -274,16 +279,16 @@
 .sales {
   display: flex;
   justify-content: space-between;
-  padding: 10px 0 10px 10px;
+  padding: 1rem 0 1rem 1rem;
 
   span {
-    font-size: 16px;
+    font-size: 1.6rem;
   }
 
   button {
     color: var(--light-black);
-    font-size: 12px;
-    margin-right: 20px;
+    font-size: 1.2rem;
+    margin-right: 2rem;
     background: transparent;
     border: none;
     cursor: pointer;
@@ -304,18 +309,19 @@ input[type="date"]::-webkit-inner-spin-button {
 .far {
   position: absolute;
   color: var(--secondary-color);
-  top: 45px;
-  right: 9px;
+  top: 4.5rem;
+  right: .9rem;
+  font-size: 1.6rem;
 }
 
 .apexcharts-legend {
-  top: 50px !important;
+  top: 5rem !important;
 }
 //* Donut Chart
 
 .donut-container {
-  width: 200px;
-  height: 200px;
+  width: 20rem;
+  height: 20rem;
   position: relative;
 }
 
@@ -399,13 +405,13 @@ input[type="date"]::-webkit-inner-spin-button {
   div {
     display: flex;
     align-items: center;
-    margin: 15px 5px 25px 0;
+    margin: 1.5rem .5rem 2.5rem 0;
   }
   .round {
-    width: 20px;
-    height: 20px;
+    width: 2rem;
+    height: 2rem;
     border-radius: 50%;
-    margin-right: 10px;
+    margin-right: 1rem;
 
   }
   .round-one{
@@ -418,4 +424,40 @@ input[type="date"]::-webkit-inner-spin-button {
     background-color: #E2DBF6;
   }
 
+}
+
+.pagination-nav{
+  margin-top: 6rem;
+
+  ul{
+    display: flex;
+  }
+
+  li{
+    margin-right: 2rem;
+    background: var(--main-color);
+    padding: .5rem 1rem;
+    text-align: center;
+    color: var(--white);
+    cursor: pointer;
+
+    &:hover{
+      background-color: #8068BF;
+    }
+  }
+
+  .pre, .next{
+
+    button{
+      background: transparent;
+      border: none;
+      color: var(--white);
+      cursor: pointer;
+      
+  
+    }
+  }
+  .active-page{
+    background: #8068BF;
+  }
 }

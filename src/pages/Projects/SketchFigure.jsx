@@ -48,17 +48,17 @@ const SketchImage = styled.img`
 
 const ZoomBtn = styled.button`
 cursor: pointer;
-  padding: 10px 30px;
+  padding: 1rem 3rem;
   background-color: var(--orange);
   border: 1px solid var(--orange);
   color: var(--white);
   display: inline-block;
-  margin-top: 20px;
-  border-radius: 6px;
-  font-size: 1rem;
+  margin-top: 2rem;
+  border-radius: .6rem;
+  font-size: 1.6rem;
 
   .zoom-icon {
     float: left;
-    margin-right: 10px;
+    margin-right: 1rem;
   }
 `;

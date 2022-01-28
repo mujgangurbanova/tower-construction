@@ -106,22 +106,22 @@ const Chevron = styled.div`
   align-items: center;
   display: flex;
   justify-content: center;
-  margin-left: 0.2rem;
+  margin-left: 0.32rem;
   transform: ${({ isOpen }) => (isOpen ? "rotate(180deg)" : "rotate(0deg)")};
 `;
 
 const Complex = styled.div`
   cursor: pointer;
-  width: 200px;
-  border: 1px solid var(--border);
-  border-radius: 5px;
+  width: 20rem;
+  border: .1rem solid var(--border);
+  border-radius: .5rem;
 
   .dropdown {
     position: relative;
   }
 
   .dropdown.single {
-    padding: 0.75rem;
+    padding: 1.2rem;
   }
 
   .dropdown__content {
@@ -133,18 +133,18 @@ const Complex = styled.div`
   }
 
   .dropdown__content-selected {
-    font-size: 1rem;
+    font-size: 1.6rem;
   }
 `;
 
 const DropdownContainer = styled.div`
   background-color: var(--white);
-  border: 1px solid var(--border);
-  max-height: 6.25rem;
-  padding: 0.3125rem;
+  border: .1rem solid var(--border);
+  max-height: 10rem;
+  padding: 0.5rem;
   position: absolute;
   top: 100%;
-  left: 1px;
+  left: .1rem;
   margin-top: 10px;
   opacity: ${({ isOpen }) => (isOpen ? "1" : "0")};
   transition: ${({ isOpen }) => (isOpen ? ".3s" : "0.4s")};
@@ -153,7 +153,7 @@ const DropdownContainer = styled.div`
 
   li {
     list-style-type: none;
-    padding: 10px;
+    padding: 1rem;
   }
 `;
 
@@ -171,42 +171,42 @@ const AddNewProjectContainer = styled.div`
 const AddButton = styled.button`
   display: inline-block;
   cursor: pointer;
-  margin-right: 1rem;
-  padding: 8px 30px;
-  font-size: 1rem;
+  margin-right: 1.6rem;
+  padding: .8rem 3rem;
+  font-size: 1.6rem;
   color: var(--white);
   background-color: var(--main-color);
-  border: 1px solid var(--main-color);
+  border: .1rem solid var(--main-color);
 
   .fas {
     float: left;
-    margin-right: 10px;
-    margin-top: 3px;
+    margin-right: 1rem;
+    margin-top: .3rem;
     color: var(--white);
   }
 `;
 
 const StartDate = styled.div`
-  width: 260px;
-  height: 45px;
+  width: 26rem;
+  height: 4.5rem;
   background-color: var(--white);
-  border-radius: 10px;
+  border-radius: 1rem;
 
   .start-date {
     display: flex;
     justify-content: space-between;
-    padding: 5px 10px;
+    padding: .5rem 1rem;
 
     span {
-      font-size: 14px;
+      font-size: 1.4rem;
       color: var(--main-color);
     }
   }
 
   .time-line {
-    height: 4px;
+    height: .4rem;
     width: 90%;
-    border-radius: 12px;
+    border-radius: 1.2rem;
     margin: 0 auto;
     background: linear-gradient(
       to left,

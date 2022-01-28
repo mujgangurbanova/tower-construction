@@ -16,7 +16,7 @@ function Card() {
     axios
       .get("/data.json")
       .then((res) => dispatch(cardData(res.data)))
-      .catch((err) => console.log(err));
+      .catch((err) => alert('Can not get card data',err));
   }, [dispatch]);
   //*funtion for filtering colors
   const getPriorityColor = (title) => {
@@ -157,39 +157,40 @@ export default Card;
 
 export const CardContainer = styled.div`
   background-color: var(--white);
-  height: 170px;
-  width: 175px;
-  border-radius: 10px;
+  height: 17rem;
+  border-radius: 1rem;
 `;
 
 const CardWrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  gap: 15px;
-  margin-top: 30px;
+  gap: 1.5rem;
+  margin-top: 3rem;
 `;
 
 export const CardDetails = styled.div`
   .home-current-status {
     font-weight: bold;
     display: block;
-    margin: 10px;
+    margin: 1rem;
+    font-size: 1.6rem;
   }
 
   .room-size {
     display: flex;
     flex-direction: column;
-    padding: 10px;
+    padding: 1rem;
 
     span {
       color: var(--secondary-color);
+      font-size: 1.6rem;
     }
   }
 
   .home-detail {
     display: flex;
     justify-content: space-between;
-    margin-top: 11px;
+    margin-top: 1.1rem;
 
     .room-number {
       color: var(--secondary-color);
@@ -198,18 +199,21 @@ export const CardDetails = styled.div`
     .detailed {
       text-decoration: none;
       color: var(--main-color);
+      font-size: 1.6rem;
+
     }
   }
 `;
 
 const CardTitle = styled.div`
-  border-top-left-radius: 10px;
-  padding: 8px;
-  border-top-right-radius: 10px;
+  border-top-left-radius: 1rem;
+  font-size: 1.6rem;
+  padding: .8rem;
+  border-top-right-radius: 1rem;
   color: var(--white);
 `;
 const FilterWrapper = styled.div`
-  margin-top: 40px;
+  margin-top: 4rem;
 `;
 
 const FilterContainer = styled.div`
@@ -223,7 +227,7 @@ export const Toggle = styled.button`
   cursor: pointer;
   border: none;
   position: relative;
-  margin-right: 10px;
+  margin-right: 1rem;
   text-decoration: none;
   color: ${({ isToggled, toggledColor }) =>
     isToggled ? toggledColor : "var(--secondary-color)"};
@@ -232,13 +236,13 @@ export const Toggle = styled.button`
   &:after {
     position: absolute;
     content: "";
-    width: 6px;
-    height: 6px;
+    width: .6rem;
+    height: .6rem;
     background-color: ${({ isToggled, toggledColor }) =>
       isToggled ? toggledColor : "var(--secondary-color)"};
     border-radius: 50%;
-    top: 28px;
-    left: 22px;
+    top: 2.8rem;
+    left: 2.2rem;
     display: ${({ isToggled }) => (isToggled ? "block" : "none")};
   }
 `;
@@ -249,11 +253,11 @@ const Input = styled.div`
   position: relative;
 
   input {
-    text-indent: 2rem;
-    border-radius: 5px;
+    text-indent: 3.2rem;
+    border-radius: .5rem;
     background: transparent;
-    border: 1px solid var(--border);
-    padding: 1rem 0;
+    border: .1rem solid var(--border);
+    padding: 1.6rem 0;
 
     &::placeholder {
       color: var(--border);
@@ -262,15 +266,15 @@ const Input = styled.div`
 
   img {
     position: absolute;
-    left: 10px;
+    left: 1rem;
   }
 `;
 
 const Block = styled.div`
   background: var(--white);
-  width: 260px;
-  height: 50px;
-  border-radius: 10px;
+  width: 26rem;
+  height: 5rem;
+  border-radius: 1rem;
 `;
 
 const BlockContainer = styled.div`
@@ -285,10 +289,10 @@ const Span = styled.button`
   border: none;
   background: ${({ isToggled }) =>
     isToggled ? "var(--main-color)" : "transparent"};
-  padding: ${({ isToggled }) => (isToggled ? "6px 30px" : "")};
-  margin: ${({ isToggled }) => (isToggled ? "" : "0 20px")};
-  height: ${({ isToggled }) => (isToggled ? "50px" : "")};
-  border-radius: ${({ isToggled }) => (isToggled ? "10px" : "0")};
+  padding: ${({ isToggled }) => (isToggled ? ".6rem 3rem" : "")};
+  margin: ${({ isToggled }) => (isToggled ? "" : "0 2rem")};
+  height: ${({ isToggled }) => (isToggled ? "5rem" : "")};
+  border-radius: ${({ isToggled }) => (isToggled ? "1rem" : "0")};
   color: ${({ isToggled }) =>
     isToggled ? "var(--white)" : "var(--secondary-color)"};
 `;

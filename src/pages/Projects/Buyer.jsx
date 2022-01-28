@@ -4,7 +4,7 @@ import info from "images/info.svg";
 import sexsiyyet from "images/sexsiyyet.png";
 import pdf from "images/pdf.png";
 
-function Buyer({ empname, processName }) {
+function Buyer({ form, setState }) {
   //*Show personal card information
   const [show, setShow] = useState(false);
   function showIcon(e) {
@@ -37,8 +37,10 @@ function Buyer({ empname, processName }) {
           autoComplete="off"
           id="buyer"
           type="text"
-          value={empname}
-          onChange={(obj) => processName(obj.target.value)}
+          value={form.empname}
+          onChange={(e) => {
+            setState({ ...form, empname: e.target.value });
+          }}
         />
       </BuyerContainer>
       <BuyerContainer>
@@ -102,23 +104,22 @@ function Buyer({ empname, processName }) {
 export default Buyer;
 
 export const BuyerWrapper = styled.div`
-  margin-top: 36px;
+  margin-top: 3.6rem;
   display: grid;
   width: 100%;
   grid-template-columns: repeat(2, 30%);
-  row-gap: 20px;
-  column-gap: 20px;
+  gap: 2rem;
 `;
 
 export const InfoButton = styled.button`
   position: absolute;
-  width: 18px;
-  height: 18px;
+  width: 1.8rem;
+  height: 1.8rem;
   background: transparent;
   cursor: pointer;
-  right: -27px;
+  right: -2.7rem;
   outline: none;
-  bottom: 2px;
+  bottom: 0.2rem;
   border: none;
 `;
 
@@ -131,65 +132,68 @@ export const BuyerContainer = styled.div`
 
   .choose-file {
     background-color: var(--white);
-    padding: 5px;
+    padding: 0.5rem;
 
     img {
       position: absolute;
-      left: 112px;
-      top: 42px;
+      left: 11.2rem;
+      top: 4.2rem;
     }
 
     #file-chosen {
-      margin-left: 44px;
-      font-size: 12px;
+      margin-left: 4.4rem;
+      font-size: 1.2rem;
     }
   }
   .custom-file-upload {
-    border: 1px solid #8970c9;
-    border-radius: 20px;
+    border: 0.1rem solid #8970c9;
+    border-radius: 2rem;
     background-color: #8970c9;
     display: inline-block;
     color: var(--white);
-    padding: 5px 10px;
+    padding: 0.5rem 1rem;
     cursor: pointer;
+    font-size: 1.6rem;
+
     position: relative;
 
     &:after {
       position: absolute;
       background-color: #cacbcb;
       content: "";
-      width: 1px;
-      height: 45px;
-      left: 95px;
-      top: -7px;
+      width: 0.1rem;
+      height: 4.5rem;
+      left: 9.5rem;
+      top: -0.7rem;
     }
   }
 
   .phone-number {
     display: flex;
     select {
-      margin-right: 5px;
-      width: 70px;
+      margin-right: 0.5rem;
+      width: 7rem;
       position: relative;
-      border: 1px solid #fff;
-      border-radius: 5px;
+      border: 0.1rem solid #fff;
+      border-radius: 0.5rem;
       -webkit-appearance: none;
-      padding: 0 10px;
+      padding: 0 1rem;
       cursor: pointer;
     }
     .fas {
       position: absolute;
-      top: 44px;
-      left: 38px;
-      font-size: 14px;
+      top: 4.4rem;
+      left: 3.8rem;
+      font-size: 1.4rem;
       color: var(--secondary-color);
     }
   }
 
   .arayis {
-    margin-bottom: 9px;
+    margin-bottom: 0.9rem;
     display: block;
     color: var(--label);
+    font-size: 1.6rem;
   }
 
   .payment {
@@ -197,25 +201,26 @@ export const BuyerContainer = styled.div`
     flex-direction: column;
     select {
       position: relative;
-      height: 43px;
-      border: 1px solid #fff;
+      height: 4.3rem;
+      border: 0.1rem solid #fff;
       -webkit-appearance: none;
-      padding: 0 10px;
-      border-radius: 5px;
+      padding: 0 1rem;
+      border-radius: 0.5rem;
       cursor: pointer;
     }
 
     .fas {
       position: absolute;
-      top: 45px;
-      left: 255px;
-      font-size: 14px;
+      top: 4.5rem;
+      left: 25.5rem;
+      font-size: 1.4rem;
       color: var(--secondary-color);
     }
 
     .credit {
-      margin-bottom: 10px;
+      margin-bottom: 1rem;
       color: var(--label);
+      font-size: 1.6rem;
     }
   }
 
@@ -225,9 +230,9 @@ export const BuyerContainer = styled.div`
     color: #df6161;
     font-weight: 500;
     position: absolute;
-    font-size: 10px;
-    top: 46px;
-    right: 10px;
+    font-size: 1rem;
+    top: 4.6rem;
+    right: 1rem;
     cursor: pointer;
   }
 `;
@@ -235,25 +240,26 @@ export const BuyerContainer = styled.div`
 export const PersonalCard = styled.img`
   position: absolute;
   z-index: 1;
-  bottom: -108px;
-  left: 83px;
+  bottom: -10.8rem;
+  left: 8.3rem;
   opacity: ${({ show }) => (show ? "1" : "0")};
   visibility: ${({ show }) => (show ? "visible" : "hidden")};
   transition: ${({ show }) => (show ? ".3s" : ".5s")};
 `;
 
 export const Label = styled.label`
-  margin-bottom: 10px;
+  margin-bottom: 1rem;
   display: inline-block;
   color: var(--label);
+  font-size: 1.6rem;
 `;
 
 export const Input = styled.input`
-  padding: 5px;
-  height: 43px;
+  padding: 0.5rem;
+  height: 4.3rem;
   width: 100%;
-  border-radius: 5px;
-  border: 1px solid #fff;
+  border-radius: 0.5rem;
+  border: 0.1rem solid #fff;
   &:focus {
     outline: none !important;
   }
