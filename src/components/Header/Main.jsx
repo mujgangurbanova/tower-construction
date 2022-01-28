@@ -140,6 +140,12 @@ const Hamburger = styled.div`
 `;
 
 export const Header = styled.div`
+  background: var(--white);
+  position: sticky;
+  height: 8.5rem;
+  top: 0;
+  z-index: 999;
+
 `;
 
 const NavContainer = styled.div`
